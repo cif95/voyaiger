@@ -1,0 +1,34 @@
+div.icon-checkbox-container {
+
+	padding: 10px;
+	position: relative;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	svg {
+		flex-shrink: 0;
+		width: 24px;
+	}
+
+	input[type=checkbox] {
+		appearence: none;
+	}
+
+	.label {
+		display: inline-block;
+		padding: 3px;
+		padding-left: 15px;
+	}
+
+	input[type=checkbox]:checked + .label {
+		color: #fff;
+	}
+
+	.checked {
+		svg path{
+			fill: red;
+		}
+	}
+}

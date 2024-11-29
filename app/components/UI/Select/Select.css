@@ -1,0 +1,22 @@
+div.select-box {
+	
+	padding: 16px;
+	position: relative;
+	border: 1px solid black;
+	border-radius: 5px;
+
+	label {
+		position: absolute;
+		top: -5px;
+		left: 10%;
+		background-color: white;
+		font-size: 12px;
+		padding: 0 10px;
+	}
+
+	select {
+		background-color: transparent;
+		border: none;
+		font-size: 14px;
+	}
+}

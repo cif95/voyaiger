@@ -1,0 +1,14 @@
+.filters-section {
+
+	padding: 40px 0;
+
+	gap: 24px;
+
+	div.select-inputs-wrapper {
+		gap: 16px;
+	}
+
+	label {
+		font-size: 16px;
+	}
+}
