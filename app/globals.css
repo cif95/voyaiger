@@ -20,10 +20,12 @@ body {
 
 .column {
   display: flex;
+  gap: 5px;
   flex-direction: column;
 }
 
 .row {
   display: flex;
+  gap: 5px;
   align-items: center;
 }

@@ -1,11 +1,16 @@
 .filters-section {
 
-	padding: 40px 0;
+	padding: 40px 16px;
 
 	gap: 24px;
 
 	div.select-inputs-wrapper {
 		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	div.checkbox-inputs-wrapper {
+		flex-wrap: wrap;
 	}
 
 	label {

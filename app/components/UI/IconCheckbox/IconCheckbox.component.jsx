@@ -1,21 +1,21 @@
 import "./IconCheckbox.css";
 
 export const IconCheckbox = ({
-	selectedValue,
+	value,
 	onChange,
 	label,
 	icon
 }) => {
 
 	return(
-		<div className={selectedValue ? `checked icon-checkbox-container` : `icon-checkbox-container`}>
-			<label>{label}</label>
-			{icon}
+		<div className={"icon-checkbox-container"}>
 			<input
 				type="checkbox"
-				value={selectedValue}
+				value={value}
 				onChange={onChange}
 			/>
+			<label>{label}</label>
+			{icon}
 		</div>
 	)
 }

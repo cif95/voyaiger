@@ -50,9 +50,6 @@ export const FiltersSection = () => {
 		typeFilterConfigs
 	} = ITINERARY_FILTERS_CONFIG;
 
-	console.log({typeFilters});
-	
-
 	return(
 		<section className='filters-section column'>
 
@@ -72,14 +69,12 @@ export const FiltersSection = () => {
 					onChange={(e) => setSelectedPeriod(e?.target?.value)}
 					label={"Period"}
 				/>
-
 				<Select
 					value={selectedContinent}
 					options={continentFilterConfigs}
 					onChange={(e) => setSelectedContinent(e?.target?.value)}
 					label={"Continent"}
 				/>
-
 				<Select
 					value={selectedPeopleCount}
 					options={peopleCountFilterConfigs}
@@ -89,10 +84,8 @@ export const FiltersSection = () => {
 			</div>
 
 			<div className='column'>
-
 				<h3>Tell me what you like most..</h3>
-
-				<div className='row'>
+				<div className='checkbox-inputs-wrapper row'>
 					{typeFilterConfigs?.map( type => (
 						<IconCheckbox
 							key={type?.label}	

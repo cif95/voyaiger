@@ -5,11 +5,11 @@ div.icon-checkbox-container {
 
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 5px;
 
 	svg {
 		flex-shrink: 0;
-		width: 24px;
+		width: 32px;
 	}
 
 	input[type=checkbox] {
