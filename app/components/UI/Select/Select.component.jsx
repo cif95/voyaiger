@@ -3,17 +3,16 @@ import "./Select.css";
 export const Select = ({
 	options,
 	onChange,
-	label
+	label,
+	value
 }) => {
 
 	return(
 		<div className="select-box">
 			<label>{label}</label>
-			<select onChange={onChange}>
+			<select onChange={onChange} value={value}>
 				{options.map((option) => {
-					
 					const { label, value } = option;
-					
 					return(
 						<option key={label} value={value}>
 							{label}

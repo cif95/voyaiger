@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, useReducer } from 'react';
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { travelFiltersActions } from 'store/slices/travelFilters';
 // Style
 import "./FiltersSection.style.css";
 // Helpers
@@ -12,35 +14,34 @@ import { Select } from 'components/UI/Select/Select.component';
 import { IconCheckbox } from 'components/UI/IconCheckbox/IconCheckbox.component';
 
 
-const initialState = {
-	natureFilter: false,
-	mountainsFilter: false,
-	artAndCultureFilter: false,
-	beachFilter: false
-};
-
-const filterReducer = (state, action) => {
-	switch (action.type) {
-
-	case "TOGGLE_FILTER":
-		const updatedState = {...state};
-		updatedState[action.filter] = !updatedState[action.filter]
-		return updatedState;
-	default:
-		return state;
-	}
-};
-
 export const FiltersSection = () => {
 
-	const [selectedPeriod, setSelectedPeriod] = useState("");
-	const [selectedPeopleCount, setSelectedPeopleCount] = useState("");
-	const [selectedContinent, setSelectedContinent] = useState("");
+	const {
+		focusActivities,
+		peopleCount,
+		continent,
+		travelDuration
+	} = useSelector((state) => state.travelFilters);
 
-	const [typeFilters, dispatch] = useReducer(filterReducer, initialState);
+	const dispatch = useDispatch();
+
+	const onUpdatePeopleCountFilter = (event) => {
+		const selectedFilter = event?.target?.value;
+		dispatch(travelFiltersActions.updatePeopleCountFilter(selectedFilter));
+	}
+
+	const onUpdateContinentFilter = (event) => {
+		const selectedFilter = event?.target?.value;
+		dispatch(travelFiltersActions.updateContinentFilter(selectedFilter));
+	}
+
+	const onUpdateTravelDurationFilter = (event) => {
+		const selectedFilter = event?.target?.value;
+		dispatch(travelFiltersActions.updateTravelDurationFilter(selectedFilter));
+	}
 
 	const onToggleTypeFilterHandler = (filterKey) => {
-		dispatch({ type: "TOGGLE_FILTER", filter: filterKey });
+		dispatch(travelFiltersActions?.updateTravelActivitiesFilters(filterKey));
 	};
 
 	const { 
@@ -64,21 +65,21 @@ export const FiltersSection = () => {
 
 			<div className='select-inputs-wrapper row'>
 				<Select
-					value={selectedPeriod}
+					value={travelDuration}
 					options={periodFilterConfigs}
-					onChange={(e) => setSelectedPeriod(e?.target?.value)}
+					onChange={onUpdateTravelDurationFilter}
 					label={"Period"}
 				/>
 				<Select
-					value={selectedContinent}
+					value={continent}
 					options={continentFilterConfigs}
-					onChange={(e) => setSelectedContinent(e?.target?.value)}
+					onChange={onUpdateContinentFilter}
 					label={"Continent"}
 				/>
 				<Select
-					value={selectedPeopleCount}
+					value={peopleCount}
 					options={peopleCountFilterConfigs}
-					onChange={(e) => setSelectedPeopleCount(e?.target?.value)}
+					onChange={onUpdatePeopleCountFilter}
 					label={"How Many"}
 				/>
 			</div>
@@ -91,7 +92,7 @@ export const FiltersSection = () => {
 							key={type?.label}	
 							label={type?.label}
 							icon={type?.icon}			
-							value={typeFilters[type?.value]}
+							value={focusActivities[type?.value]}
 							onChange={() => onToggleTypeFilterHandler(type?.value)}
 						/>
 					))}

@@ -67,9 +67,6 @@ export const typywritingTextVariants = {
 	}
 }
 
-console.log({frame0});
-
-
 export const carouselFrames = [
 	{
 		content: "Ever dreamt about... ",

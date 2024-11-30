@@ -7,7 +7,7 @@ import MountainsSVG from "assets/icons/mountains.svg";
 
 const PERIOD_FILTERS = [
 	{
-		value: "weekend",
+		value: "oneWeekend",
 		label: "Weekend"
 	},
 	{
@@ -44,7 +44,11 @@ const CONTINENT_FILTERS = [
 	{
 		value: "centralAmerica",
 		label: "Central America"
-	}
+	},
+	{
+		value: "southAmerica",
+		label: "South America"
+	},
 ]
 
 const PEOPLE_COUNT_FILTERS = [
@@ -69,22 +73,22 @@ const PEOPLE_COUNT_FILTERS = [
 const TYPE_FILTERS = [
 	{
 		label: "Nature",
-		value: "natureFilter",
+		value: "nature",
 		icon: <NatureSVG />
 	},
 	{
 		label: "Mountains",
-		value: "mountainsFilter",
+		value: "mountains",
 		icon: <MountainsSVG />
 	},
 	{
 		label: "Art & Culture",
-		value: "artAndCultureFilter",
+		value: "artAndCulture",
 		icon: <CultureSVG />,
 	},
 	{
 		label: "Beach",
-		value: "beachFilter",
+		value: "beach",
 		icon: <BeachSVG />
 	}
 ]
