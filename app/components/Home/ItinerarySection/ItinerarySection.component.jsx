@@ -63,22 +63,21 @@ export const ItinerarySection = () => {
 			<h4>Best Period: {itinerary?.bestPeriod}</h4>
 			<p>Notes: {itinerary?.cultureInformation}</p>
 
-			<h5>Stops: </h5>
+			<h4>Stops: </h4>
 			<ul>
 				{itinerary?.stops.map( stop => (
 					<li key={stop.city}>
-						<span>{stop?.city}</span>
-						<span>Duration: {stop?.duration}</span>
+						<h4>{stop?.city}</h4>
+						<span>Days: {stop?.duration}</span>
 						<span>{stop?.description}</span>
 						Attractions:
-						<ul>
+						<ol>
 							{stop.attractions.map( attraction => (
 								<li key={attraction?.name}>
-									<span>{attraction?.name}</span>
-									<span>{attraction?.description}</span>
+									<span>{attraction?.name}: {attraction?.description}</span>
 								</li>
 							) )}
-						</ul>
+						</ol>
 					</li>
 				) )}
 			</ul>
