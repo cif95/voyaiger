@@ -4,9 +4,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { travelFiltersActions } from 'store/slices/travelFilters';
 // Style
-import "./FiltersSection.style.css";
+import "./Filters.style.css";
 // Helpers
-import { ITINERARY_FILTERS_CONFIG } from './FiltersSection.helpers';
+import { ITINERARY_FILTERS_CONFIG } from './Filters.helpers';
 // Motion
 import { motion } from "motion/react";
 // Components
@@ -14,7 +14,7 @@ import { Select } from 'components/UI/Select/Select.component';
 import { IconCheckbox } from 'components/UI/IconCheckbox/IconCheckbox.component';
 
 
-export const FiltersSection = () => {
+export const Filters = () => {
 
 	const {
 		focusActivities,

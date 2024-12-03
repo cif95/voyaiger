@@ -1,40 +1,15 @@
-'use client';
-import { useDispatch, useSelector } from "react-redux";
-import { itineraryActions } from "store/slices/itinerary";
+import { useSelector } from "react-redux";
+
 
 export const ItinerarySection = () => {
 
-	const dispatch = useDispatch();
-	const {
-		focusActivities,
-		peopleCount,
-		continent,
-		travelDuration
-	} = useSelector((state) => state.travelFilters);
+	const { itinerary } = useSelector((state) => state.itinerary);
 
-	const generateItineraryHandler = () => {
+	if (!itinerary) return <></>;
 
-		const selectedActivities = Object.entries(focusActivities)
-			.filter(([key, value]) => value === true)
-			.map(([key]) => key);
-
-		const filters = {
-			peopleCount,
-			continent,
-			travelDuration,
-			activities: selectedActivities
-		}
-		dispatch(itineraryActions.generateItinerary({ filters }));
-	}
-
-	return (
+	return(
 		<div>
-			<h2>Click here to Generate it!</h2>
-
-			<button onClick={generateItineraryHandler}>
-				Generate
-			</button>
-
+			<h2>ITINERARY</h2>
 		</div>
-	);
+	)
 }

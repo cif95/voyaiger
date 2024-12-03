@@ -12,10 +12,15 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 16px;
 }
 
 .column {
@@ -28,4 +33,12 @@ body {
   display: flex;
   gap: 5px;
   align-items: center;
+}
+
+.primaryButton {
+
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 7px;
+  font-size: 14px;
 }
