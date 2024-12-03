@@ -17,7 +17,7 @@ export const GenerationSection = () => {
 		travelDuration
 	} = useSelector((state) => state.travelFilters);
 
-	const { itinerary } = useSelector((state) => state.itinerary);
+	const { isGenerating, itinerary } = useSelector((state) => state.itinerary);
 
 	const generateItineraryHandler = () => {
 
@@ -41,8 +41,8 @@ export const GenerationSection = () => {
 			<Filters/>
 			<h2>Ready?</h2>
 			<p className="gradientText">Powered by Gemini AI</p>
-			<button onClick={generateItineraryHandler} className="primaryButton">
-				Generate
+			<button onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
+				{isGenerating ? 'Generating..' : 'Generate'}
 			</button>
 		</section>
 	)

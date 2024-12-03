@@ -145,6 +145,11 @@ const initialState = {
 export const itinerarySlice = createSlice({
     name: "itinerary",
     initialState: initialState,
+	reducers: {
+        clearGeneratedItinerary: (state) => {
+            state.itinerary = initialState.itinerary;
+        }
+    },
 	extraReducers: (builder) => {
         builder
             .addCase(generateItinerary.pending, (state) => {
