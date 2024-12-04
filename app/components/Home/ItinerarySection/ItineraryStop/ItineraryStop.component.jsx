@@ -40,19 +40,13 @@ export const ItineraryStop = ({ stop }) => {
 			{ image &&
 				<div className="column">
 					<Image
-						src={image?.urls?.full}
-						alt={image?.description}
+						src={image?.urls?.regular}
+						alt={image?.alt_description}
 						width={image?.width}
 						height={image?.height}
 						className="itineraryImage"
 					/>
 					<p>Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">{image?.user?.username}</a> </p>
-				</div>
-			}
-
-			{ weather && 
-				<div className="column">
-					
 				</div>
 			}
 
