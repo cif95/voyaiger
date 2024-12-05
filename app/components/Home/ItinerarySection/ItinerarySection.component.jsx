@@ -35,7 +35,7 @@ export const ItinerarySection = () => {
 			<h4>Stops: </h4>
 			
 			<ul>
-				{itinerary?.stops.map( stop => (<ItineraryStop stop={stop} key={stop?.city}/>))}
+				{itinerary && itinerary?.stops.map( stop => (<ItineraryStop stop={stop} key={stop?.city}/>))}
 			</ul>
 
 			<TravelMap />

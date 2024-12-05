@@ -11,7 +11,7 @@ export const WeatherWidget = ({ weather }) => {
 			<Image
 				className="weatherIcon"
 				src={weather?.iconUrl}
-				alt={weather?.description ?? 'weather info'}
+				alt={weather?.description}
 				width={80}
 				height={80}
 			/>

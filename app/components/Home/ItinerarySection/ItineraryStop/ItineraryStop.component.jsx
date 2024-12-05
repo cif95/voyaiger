@@ -8,11 +8,11 @@ export const ItineraryStop = ({ stop }) => {
 
 	const [image, setImage] = useState();
 	const [weather, setWeather] = useState();
+	const [isLoading, setIsLoading] = useState();
 
-	const fetchDestinationImage = useCallback( async () => {
+	const fetchDestinationImage = useCallback(async () => {
 		const image = await UnsplashServices.getImage(stop?.city);
 		setImage(image);
-
 	},[stop?.city]);
 
 	const fetchDestinationWeather = useCallback( async () => {
@@ -20,13 +20,26 @@ export const ItineraryStop = ({ stop }) => {
 		setWeather(weather);
 	},[stop?.coordinates]);
 
+	const fetchItineraryDetails = useCallback(() => {
+
+		try {
+			setIsLoading(true);
+			fetchDestinationImage();
+			fetchDestinationWeather();
+		} catch (error) {
+			console.warn("ERR on fetchItineraryDetails");
+		} finally {
+			setIsLoading(false);
+		}
+	},[fetchDestinationImage, fetchDestinationWeather]);
+
 	useEffect(() => {
 
 		if (!stop) return;
-		fetchDestinationImage();
-		fetchDestinationWeather();
-		
-	}, [fetchDestinationImage, fetchDestinationWeather, stop]);
+		fetchItineraryDetails();
+	}, [fetchItineraryDetails, stop]);
+
+	const hasLoadedData = !isLoading && image && weather;
 
 	return(
 		<li key={stop.city}>
@@ -35,19 +48,20 @@ export const ItineraryStop = ({ stop }) => {
 			<span>Days: {stop?.duration}</span>
 			<span>{stop?.description}</span>
 
-			{ weather && <WeatherWidget weather={weather}/>}
-
-			{ image &&
-				<div className="column">
-					<Image
-						src={image?.urls?.regular}
-						alt={image?.alt_description}
-						width={image?.width}
-						height={image?.height}
-						className="itineraryImage"
-					/>
-					<p>Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">{image?.user?.username}</a> </p>
-				</div>
+			{hasLoadedData &&
+				<>
+					<WeatherWidget weather={weather}/>
+					<div className="column">
+						<Image
+							src={image?.urls?.regular}
+							alt={image?.alt_description}
+							width={image?.width}
+							height={image?.height}
+							className="itineraryImage"
+						/>
+						<p>Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">{image?.user?.username}</a> </p>
+					</div>
+				</>
 			}
 
 			Attractions:
