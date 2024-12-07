@@ -1,16 +1,11 @@
 section.generation {
 
-	align-items: flex-start;
+	align-items: center;
+	padding: 2rem 0;
 	justify-content: flex-start;
 	gap: 16px;
 
 	button {
 		align-self: center;
-	}
-
-	p.gradientText {
-		background: -webkit-linear-gradient(#961aa1, #471fd6);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
 	}
 }

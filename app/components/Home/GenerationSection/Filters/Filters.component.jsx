@@ -84,7 +84,7 @@ export const Filters = () => {
 				/>
 			</div>
 
-			<div className='column'>
+			<div className='column activitiesColumn'>
 				<h3>Tell me what you like most..</h3>
 				<div className='checkbox-inputs-wrapper row'>
 					{typeFilterConfigs?.map( type => (

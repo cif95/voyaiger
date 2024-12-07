@@ -8,13 +8,12 @@ export const IconCheckbox = ({
 }) => {
 
 	return(
-		<div className={"icon-checkbox-container"}>
-			<input
-				type="checkbox"
-				value={value}
-				onChange={onChange}
-			/>
-			<label>{label}</label>
+		<div className="icon-checkbox">
+			<label className="checkbox-container">
+				<input type="checkbox" checked={value} onChange={onChange}/>
+				<div className="checkmark"></div>
+			</label>
+			<p>{label}</p>
 			{icon}
 		</div>
 	)

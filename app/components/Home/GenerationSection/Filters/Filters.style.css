@@ -2,15 +2,31 @@
 
 	padding: 40px 0;
 
-	gap: 24px;
+	gap: 40px;
 
 	div.select-inputs-wrapper {
-		gap: 16px;
+		row-gap: 42px;
+		column-gap: 24px;
 		flex-wrap: wrap;
+		justify-content: center;
+
+		> div {
+			flex-grow: 1;
+			max-width: 150px;
+		}
+
+		@media screen and (min-width: 992px) {
+			justify-content: flex-start;
+		}
+	}
+
+	div.activitiesColumn {
+		gap: 20px;
 	}
 
 	div.checkbox-inputs-wrapper {
 		flex-wrap: wrap;
+		gap: 20px;
 	}
 
 	label {

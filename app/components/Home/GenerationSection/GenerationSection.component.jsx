@@ -3,7 +3,7 @@
 import "./GenerationSection.style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { itineraryActions } from "store/slices/itinerary";
-
+import { GenerateButton } from "./GenerateButton/GenerateButton.component";
 import { Filters } from "./Filters/Filters.component";
 
 
@@ -40,10 +40,9 @@ export const GenerationSection = () => {
 		<section className="column generation">
 			<Filters/>
 			<h2>Ready?</h2>
-			<p className="gradientText">Powered by Gemini AI</p>
-			<button onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
+			<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
 				{isGenerating ? 'Generating..' : 'Generate'}
-			</button>
+			</GenerateButton>
 		</section>
 	)
 }
