@@ -2,6 +2,7 @@
 // Components
 import { GenerationSection } from "components/Home/GenerationSection/GenerationSection.component";
 import { ItinerarySection } from "components/Home/ItinerarySection/ItinerarySection.component";
+import { Intro } from "components/Home/Intro/Intro.component";
 import { Hero } from "./components/Home/Hero/Hero.component";
 
 // Redux
@@ -17,8 +18,9 @@ export default function Home() {
       <main>
         <Hero />
         <div className="container">
-          <GenerationSection/>
-          <ItinerarySection/>
+          <Intro />
+          <GenerationSection />
+          <ItinerarySection />
         </div>
       </main> 
     </Provider>
