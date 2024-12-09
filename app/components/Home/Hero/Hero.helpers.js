@@ -12,30 +12,30 @@ import mobileFrame8 from "assets/images/09_mobile.jpg";
 
 export const carouselFrameVariants = {
 	initial: { 
-		opacity: 0.6,
+		opacity: 0,
 		transform: "scale(1)",
 		transition: {
 			transform: {
-				duration: 5,
+				duration: 7,
 				ease: "easeInOut"
 			},
 			opacity: {
-				duration: 0.6,
-				ease: "easeInOut"
+				duration: 1.2,
+				ease: "linear"
 			}
 		}
 	},
 	fadeIn: { 
 		opacity: 1,
-		transform: "scale(1.2)",
+		transform: "scale(1.1)",
 		transition: {
 			transform: {
-				duration: 5,
+				duration: 7,
 				ease: "easeInOut"
 			},
 			opacity: {
-				duration: 0.6,
-				ease: "easeInOut"
+				duration: 1.2,
+				ease: "linear"
 			}
 		}
 	}

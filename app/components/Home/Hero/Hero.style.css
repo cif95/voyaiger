@@ -3,79 +3,84 @@ section.hero {
 	height: 100dvh;
 	width: 100%;
 
-	display: grid;
-	place-items: center;
-
 	overflow-x: hidden;
 	color: white;
 
 	position: relative;
 
-	h1 {
-		position: relative;
-		display: flex;
-		align-items: center;
-		padding: 0 16px;
-	}
-
-	span.caret {
-
-		height: 100%;
-		flex-shrink: 0;
-		min-height: 30px;
-		border-right: 1px solid rgb(211, 211, 211);
-	
-		@media screen and (min-width: 640px) {
-			min-height: 70px;
-		}
-	
-		@media screen and (min-width: 768px) {
-			min-height: 150px;
-		}
-	
-	}
-	
 	div.imageWrapper {
-	
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		max-width: 100%;
-		max-height: 100%;
-		bottom: 0;
-		background-position: bottom;
-		background-size: cover;
-		filter: brightness(0.6);
+
+		width: 100%;
+		height: 100%;
+
+		display: grid;
+		place-items: center;
+		
+		
+		position: relative;
 
 		overflow-y: hidden;
 		overflow-x: hidden;
 		
 		img {
+			position: absolute;
+			filter: brightness(0.6);
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			opacity: 0;
+			z-index: -1;
 			max-width: 100%;
 			min-height: 100%;
 			object-fit: cover;
 			object-position: center top;
 		}
-	}
 
-	span.typewritingText {
-		overflow: hidden;
-		white-space: nowrap;
-	}
+		h1 {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			padding: 0 16px;
+		}
+	
+		span.caret {
+	
+			height: 100%;
+			flex-shrink: 0;
+			min-height: 30px;
+			border-right: 1px solid rgb(211, 211, 211);
+		
+			@media screen and (min-width: 640px) {
+				min-height: 70px;
+			}
+		
+			@media screen and (min-width: 768px) {
+				min-height: 150px;
+			}
+		
+		}
 
-	div.scrollerIcon {
-
-		position: absolute;
-		bottom: 100px;
-		left: 50%;
-		transform: translateX(-50%);
-
-		display: grid;
-		place-items: center;
-
-		svg {
-			filter: drop-shadow(0px 1px 3px rgb(43, 43, 43))
+		span.typewritingText {
+			overflow: hidden;
+			white-space: nowrap;
+		}
+	
+		div.scrollerIcon {
+	
+			position: absolute;
+			bottom: 100px;
+			left: 50%;
+			transform: translateX(-50%);
+	
+			display: grid;
+			place-items: center;
+	
+			svg {
+				filter: drop-shadow(0px 1px 3px rgb(43, 43, 43))
+			}
 		}
 	}
+
 }
