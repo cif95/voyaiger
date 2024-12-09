@@ -1,17 +1,18 @@
-//import localFont from "next/font/local";
+
 import "./globals.css";
 import { Header } from "./components/UI/Header/Header.component";
-/*
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+import { Mohave } from 'next/font/google';
+import { Varta } from 'next/font/google';
+
+const mohave = Mohave({
+  subsets: ['latin'],
+  variable: '--font-mohave'
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});*/
+
+const varta = Varta({
+  subsets: ['latin'],
+  variable: '--font-varta'
+})
 
 export const metadata = {
   title: "VoyAIger",
@@ -21,9 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > 
+      <body className={`${mohave.variable} ${varta.variable} antialiased`}> 
         <Header/>
         {children}
       </body>
