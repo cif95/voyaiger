@@ -76,7 +76,7 @@ export const Hero = () => {
 				/>
 			</div>
 
-			<h1>
+			<h1 className="text-display">
 				<motion.span
 					key={heroText}
 					initial={{ width: 0}}
@@ -106,7 +106,7 @@ export const Hero = () => {
 					type: "tween"
 				}}
 			>
-				<ScrollerSVG width={40} height={40} />
+				<ScrollerSVG />
 			</motion.div>
 
 		</section>

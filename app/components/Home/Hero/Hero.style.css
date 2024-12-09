@@ -6,7 +6,7 @@ section.hero {
 	display: grid;
 	place-items: center;
 
-	overflow: hidden;
+	overflow-x: hidden;
 	color: white;
 
 	position: relative;
@@ -16,7 +16,6 @@ section.hero {
 		display: flex;
 		align-items: center;
 		padding: 0 16px;
-		font-size: 1.5rem;
 	}
 
 	span.caret {
@@ -26,11 +25,11 @@ section.hero {
 		min-height: 30px;
 		border-right: 1px solid rgb(211, 211, 211);
 	
-		@media screen and (min-width: 1024px) {
+		@media screen and (min-width: 640px) {
 			min-height: 70px;
 		}
 	
-		@media screen and (min-width: 1536px) {
+		@media screen and (min-width: 768px) {
 			min-height: 150px;
 		}
 	
@@ -66,26 +65,17 @@ section.hero {
 	}
 
 	div.scrollerIcon {
+
 		position: absolute;
 		bottom: 100px;
 		left: 50%;
 		transform: translateX(-50%);
 
+		display: grid;
+		place-items: center;
+
 		svg {
 			filter: drop-shadow(0px 1px 3px rgb(43, 43, 43))
-		}
-	}
-
-	@media screen and (min-width: 1024px) {
-		h1 {
-			font-size: 4rem;
-		}
-	}
-
-	@media screen and (min-width: 1536px) {
-		h1 {
-			padding: 0;
-			font-size: 7rem;
 		}
 	}
 }

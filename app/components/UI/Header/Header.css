@@ -30,10 +30,6 @@ header.fixedHeader {
 		z-index: -1;
 	}
 
-	h2.appLogo {
-		font-size: 50rem;
-	}
-
 	svg.github {
 
 		fill: white;

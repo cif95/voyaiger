@@ -28,8 +28,4 @@
 		flex-wrap: wrap;
 		gap: 20px;
 	}
-
-	label {
-		font-size: 16px;
-	}
 }

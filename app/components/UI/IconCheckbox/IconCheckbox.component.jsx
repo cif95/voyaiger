@@ -9,7 +9,7 @@ export const IconCheckbox = ({
 
 	return(
 		<div className="icon-checkbox">
-			<label className="checkbox-container">
+			<label className="checkbox-container label">
 				<input type="checkbox" checked={value} onChange={onChange}/>
 				<div className="checkmark"></div>
 			</label>

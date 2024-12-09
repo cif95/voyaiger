@@ -9,7 +9,7 @@ export const Select = ({
 
 	return(
 		<div className="select-box">
-			<label>{label}</label>
+			<label className="label">{label}</label>
 			<select onChange={onChange} value={value}>
 				{options.map((option) => {
 					const { label, value } = option;

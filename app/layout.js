@@ -1,15 +1,15 @@
 
 import "./globals.css";
 import { Header } from "./components/UI/Header/Header.component";
-import { Mohave } from 'next/font/google';
-import { Varta } from 'next/font/google';
+import { Nunito } from 'next/font/google';
+import { Nunito_Sans } from 'next/font/google';
 
-const mohave = Mohave({
+const nunito = Nunito({
   subsets: ['latin'],
   variable: '--font-mohave'
 });
 
-const varta = Varta({
+const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
   variable: '--font-varta'
 })
@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${mohave.variable} ${varta.variable} antialiased`}> 
+      <body className={`${nunito.variable} ${nunitoSans.variable} antialiased`}> 
         <Header/>
         {children}
       </body>

@@ -1,3 +1,8 @@
+:root {
+  --color-font: #294457;
+  --color-secondary-font: 868298;
+}
+
 html, body {
   height: 100%;
 }
@@ -6,6 +11,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #e0e0e0;
   font-family: var(--font-varta);
+  color: var(--color-font);
+
+  font-size: 1rem;
+
+  @media screen and (min-width: 640px) {
+		font-size: 1.125rem;
+	}
+
+  @media screen and (min-width: 1536px) {
+		font-size: 1.438rem;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,6 +36,11 @@ h1, h2, h3, h4, h5, h6 {
 
 button {
   cursor: pointer;
+}
+
+select {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .container {
@@ -90,4 +111,30 @@ button {
     background: linear-gradient(145deg, #c3d5de, #e9f6fb);
     box-shadow: 8px 8px 16px #adb5b9, -8px -8px 16px #e8e8e8;
   }
+}
+
+/* Typography */
+.text-display {
+  font-size: 1.5rem;
+
+  @media screen and (min-width: 640px) {
+		font-size: 2.8rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		font-size: 4rem;
+	}
+
+  @media screen and (min-width: 1536px) {
+		font-size: 6rem;
+	}
+}
+
+.text-label {
+  font-size: 0.7rem;
+  color: var(--color-secondary-font);
+
+  @media screen and (min-width: 640px) {
+		font-size: 0.9rem;
+	}
 }
