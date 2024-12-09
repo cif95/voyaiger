@@ -1,6 +1,14 @@
 
 /* From Uiverse.io by MuhammadHasann */ 
-.gen-button {
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-self: center;
+}
+
+.genButton {
 	--transition: 0.3s ease-in-out;
 	--offset: 2px;
 
@@ -126,25 +134,25 @@
 	z-index: 10;
 
 	width: 1.75rem;
+}
 
-	.path {
-		fill: currentColor;
-		stroke: currentColor;
-		transform-origin: center;
-		color: hsl(241, 75.40%, 47.80%);
-	}
+.path {
+	fill: currentColor;
+	stroke: currentColor;
+	transform-origin: center;
+	color: hsl(241, 75.40%, 47.80%);
+}
 
-	.path:nth-child(1) {
-		--scale_path_1: 1.2;
-	}
+.path:nth-child(1) {
+	--scale_path_1: 1.2;
+}
 
-	.path:nth-child(2) {
-		--scale_path_2: 1.2;
-	}
+.path:nth-child(2) {
+	--scale_path_2: 1.2;
+}
 
-	.path:nth-child(3) {
-		--scale_path_3: 1.2;
-	}
+.path:nth-child(3) {
+	--scale_path_3: 1.2;
 }
 
 .text_button {
@@ -160,6 +168,12 @@
 
 	font-size: 1.2rem;
 	color: transparent;
+}
+
+p.text_button {
+
+	font-size: 0.8rem;
+	text-align: center;
 }
 
 

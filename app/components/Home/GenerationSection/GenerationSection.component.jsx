@@ -1,6 +1,6 @@
 'use client';
 
-import "./GenerationSection.style.css";
+import styles from "./GenerationSection.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { itineraryActions } from "store/slices/itinerary";
 import { GenerateButton } from "./GenerateButton/GenerateButton.component";
@@ -37,7 +37,7 @@ export const GenerationSection = () => {
 	if (itinerary) return <></>;
 
 	return(
-		<section className="column generation">
+		<section className={styles.generationSection}>
 			<Filters/>
 			<h2>Ready?</h2>
 			<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>

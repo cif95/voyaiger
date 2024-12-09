@@ -1,4 +1,4 @@
-import "./IconCheckbox.css";
+import styles from "./IconCheckbox.module.css";
 
 export const IconCheckbox = ({
 	value,
@@ -8,10 +8,10 @@ export const IconCheckbox = ({
 }) => {
 
 	return(
-		<div className="icon-checkbox">
-			<label className="checkbox-container label">
+		<div className={styles.iconCheckbox}>
+			<label className={styles.checkboxContainer}>
 				<input type="checkbox" checked={value} onChange={onChange}/>
-				<div className="checkmark"></div>
+				<div className={styles.checkmark}></div>
 			</label>
 			<p>{label}</p>
 			{icon}

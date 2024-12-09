@@ -4,7 +4,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { travelFiltersActions } from 'store/slices/travelFilters';
 // Style
-import "./Filters.style.css";
+import styles from "./Filters.module.css";
 // Helpers
 import { ITINERARY_FILTERS_CONFIG } from './Filters.helpers';
 // Motion
@@ -52,7 +52,7 @@ export const Filters = () => {
 	} = ITINERARY_FILTERS_CONFIG;
 
 	return(
-		<section className='filters-section column'>
+		<section className={styles.section}>
 
 			<motion.h2
 				initial={{ transform: "translateX(-80px)" }}
@@ -63,7 +63,7 @@ export const Filters = () => {
 				Let&apos;s Start!
 			</motion.h2>
 
-			<div className='select-inputs-wrapper row'>
+			<div className={styles.selectInputsWrapper}>
 				<Select
 					value={travelDuration}
 					options={periodFilterConfigs}
@@ -84,9 +84,9 @@ export const Filters = () => {
 				/>
 			</div>
 
-			<div className='column activitiesColumn'>
+			<div className={styles.activitiesColumn}>
 				<h3>Tell me what you like most..</h3>
-				<div className='checkbox-inputs-wrapper row'>
+				<div className={styles.checkboxInputsWrapper}>
 					{typeFilterConfigs?.map( type => (
 						<IconCheckbox
 							key={type?.label}	

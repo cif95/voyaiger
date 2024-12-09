@@ -1,4 +1,4 @@
-import "./Select.css";
+import styles from "./Select.module.css";
 
 export const Select = ({
 	options,
@@ -8,8 +8,8 @@ export const Select = ({
 }) => {
 
 	return(
-		<div className="select-box">
-			<label className="label">{label}</label>
+		<div className={styles.selectBox}>
+			<label className="text-label">{label}</label>
 			<select onChange={onChange} value={value}>
 				{options.map((option) => {
 					const { label, value } = option;

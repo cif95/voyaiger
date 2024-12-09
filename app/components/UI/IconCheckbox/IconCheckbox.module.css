@@ -1,7 +1,7 @@
 /* From Uiverse.io by shreyasm-dev */ 
 /* Hide the default checkbox */
 
-.icon-checkbox {
+.iconCheckbox {
 
 	display: flex;
 	align-items: center;
@@ -14,7 +14,7 @@
 	}
 }
 
-.checkbox-container {
+.checkboxContainer {
 	
 	display: block;
 	position: relative;
@@ -60,11 +60,11 @@
 	opacity: 0;
 }
 
-.checkbox-container input:checked ~ .checkmark:after {
+.checkboxContainer input:checked ~ .checkmark:after {
 	opacity: 1;
 }
 
-.checkbox-container .checkmark:after {
+.checkboxContainer .checkmark:after {
 	left: 0.45em;
 	top: 0.25em;
 	width: 0.25em;

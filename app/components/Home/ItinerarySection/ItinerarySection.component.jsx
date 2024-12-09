@@ -5,7 +5,7 @@ import { itineraryActions } from "store/slices/itinerary";
 // Next
 import dynamic from 'next/dynamic';
 // Style
-import "./ItinerarySection.style.css";
+import styles from "./ItinerarySection.module.css";
 import { ItineraryStop } from "./ItineraryStop/ItineraryStop.component";
 // Components
 const TravelMap = dynamic(() => import('./TravelMap/TravelMap.component'), { ssr: false });
@@ -23,7 +23,7 @@ export const ItinerarySection = () => {
 	if (!itinerary) return <></>;
 
 	return(
-		<section className="column itinerary">
+		<section className={"column" + styles.itinerary}>
 
 			<h2>Your itinerary</h2>
 			<h3>{itinerary?.itineraryName}</h3>

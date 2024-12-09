@@ -1,7 +1,7 @@
 'use client';
 
 import GithubSVG from "assets/icons/github.svg";
-import "./Header.css";
+import styles from "./Header.module.css";
 
 import { motion, useScroll, useTransform } from 'motion/react';
 
@@ -16,16 +16,16 @@ export const Header = () => {
 	);
 
 	return(
-		<header className="fixedHeader">
+		<header className={styles.fixedHeader}>
 
 			<motion.div
-				className='backgroundLayer'
+				className={styles.backgroundLayer}
 				style={{ opacity: backgroundColorOpacity}}
 			/>
 
 			<h2>VoyAIger</h2>
 
-			<GithubSVG className="github"/>
+			<GithubSVG className={styles.githubSvg}/>
 		</header>
 	)
 }

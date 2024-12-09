@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 // Style
-import "./Hero.style.css";
+import styles from "./Hero.module.css";
 
 // Assets
 import ScrollerSVG from "assets/icons/scroller.svg";
@@ -48,9 +48,27 @@ export const Hero = () => {
 	}, []);
 
 	return(
-		<section className="hero">
+		<section className={styles.hero}>
 
-			<div className="imageWrapper">
+			<div className={styles.imageWrapper}>
+
+				<h1 className="text-display">
+					<motion.span
+						key={heroText}
+						initial={{ width: 0}}
+						animate={{ width: "100%"}}
+						transition={{ delay: 0.5, duration: 2}}
+						className={styles.typewritingText}
+					>
+						{heroText}
+					</motion.span>
+					<motion.span
+						variants={caretAnimationVariants}
+						animate="blinking"
+						className={styles.caret}
+					/>
+				</h1>
+
 				{carouselFrames.map((frame, index) => {
 					const isActiveFrame = carouselIndex === index;
 					return(
@@ -64,25 +82,9 @@ export const Hero = () => {
 						/>
 					)
 				})}
-				<h1 className="text-display">
-					<motion.span
-						key={heroText}
-						initial={{ width: 0}}
-						animate={{ width: "100%"}}
-						transition={{ delay: 0.5, duration: 2}}
-						className="typewritingText"
-					>
-						{heroText}
-					</motion.span>
-					<motion.span
-						variants={caretAnimationVariants}
-						animate="blinking"
-						className="caret"
-					/>
-				</h1>
 
 				<motion.div
-					className="scrollerIcon"
+					className={styles.scrollerIcon}
 					animate={{
 						transform: ['translateY(10px)', 'translateY(0px)', 'translateY(10px)']
 					}}
@@ -97,8 +99,6 @@ export const Hero = () => {
 					<ScrollerSVG />
 				</motion.div>
 			</div>
-
-
 		</section>
 	)
 }

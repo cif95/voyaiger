@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./WeatherWidget.style.css";
+import styles from "./WeatherWidget.module.css";
 
 export const WeatherWidget = ({ weather }) => {
 
@@ -9,7 +9,7 @@ export const WeatherWidget = ({ weather }) => {
 		<div className="column">
 			<h4>Current Weather:</h4>
 			<Image
-				className="weatherIcon"
+				className={styles.weatherIcon}
 				src={weather?.iconUrl}
 				alt={weather?.description}
 				width={80}
