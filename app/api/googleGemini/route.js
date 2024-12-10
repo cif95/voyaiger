@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { itinerarySchema } from "./helpers";
 
 const API_KEY = process.env.GOOGLE_AI_API_kEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
-import { itinerarySchema } from "./helpers";
 
 export async function POST(req) {
 
@@ -15,14 +15,14 @@ export async function POST(req) {
 		}
 
 		const model = genAI.getGenerativeModel({
-			model: "models/gemini-1.5-pro",
+			model: "models/gemini-1.5-flash",
 			systemInstruction: `
 				Generate a travel itinerary considering this user filters:
 					{ 
 						peopleCount: string, => this can be "soloTraveler", "couple", "smallGroup" or "group"
 						continent: string, => this can be "europe", "northAmerica", "southAmerica", "centralAmerica", "asia", "oceania"
 						travelDuration: string, => this can be "oneWeekend", "oneWeek" or "twoWeeks"
-						activities: array of strings => this can be "nature", "beach", "mountains", "artAndCulture"
+						activities: array of strings => this can be "nature", "beach", "mountains", "artAndCulture", "nightlife"
 					}
 				The itinerary should be tailored to suggest the best travel for the given filters, providing rich descriptions about each stop.
 				It can suggest more stops but each stop cannot be more then 2 hours away with public transport.
