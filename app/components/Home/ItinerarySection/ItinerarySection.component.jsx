@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 import { itineraryActions } from "store/slices/itinerary";
-// Services
 // Next
 import dynamic from 'next/dynamic';
 // Style
@@ -17,8 +17,14 @@ export const ItinerarySection = () => {
 	const dispatch = useDispatch();
 
 	const generateNewItineraryHandler = async () => {
+		localStorage.clear();
 		dispatch(itineraryActions.clearGeneratedItinerary());
 	}
+
+	useEffect(() => {
+		const cachedItinerary = localStorage.getItem('itinerary');
+		if (cachedItinerary) dispatch(itineraryActions.setItinerary(JSON.parse(cachedItinerary)));
+	}, [dispatch]);
 
 	if (!itinerary) return <></>;
 
@@ -40,10 +46,12 @@ export const ItinerarySection = () => {
 
 			<TravelMap />
 
-			<h4>Want to generate a new one?</h4>
-			<button onClick={generateNewItineraryHandler} className="primaryButton">
-				Generate New Itinerary
-			</button>
+			<div className="column">
+				<h4>Want to generate a new one?</h4>
+				<button onClick={generateNewItineraryHandler} className="primaryButton">
+					Generate New Itinerary
+				</button>
+			</div>
 
 		</section>
 	)

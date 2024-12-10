@@ -126,6 +126,7 @@ const generateItinerary = createAsyncThunk(
 
         try {
             const response = await GoogleAIServices.generateTravelItinerary(filters);
+			localStorage.setItem('itinerary', JSON.stringify(response));
             return response;
 
         } catch (error) {
@@ -148,7 +149,10 @@ export const itinerarySlice = createSlice({
 	reducers: {
         clearGeneratedItinerary: (state) => {
             state.itinerary = initialState.itinerary;
-        }
+        },
+		setItinerary: (state, action) => {
+            state.itinerary = action?.payload;
+        },
     },
 	extraReducers: (builder) => {
         builder
