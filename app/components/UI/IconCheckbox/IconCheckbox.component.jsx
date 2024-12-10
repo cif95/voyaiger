@@ -8,7 +8,7 @@ export const IconCheckbox = ({
 }) => {
 
 	return(
-		<div className={styles.iconCheckbox}>
+		<div className={ value === true ? styles.iconCheckboxChecked : styles.iconCheckbox}>
 			<label className={styles.checkboxContainer}>
 				<input type="checkbox" checked={value} onChange={onChange}/>
 				<div className={styles.checkmark}></div>

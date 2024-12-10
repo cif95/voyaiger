@@ -9,8 +9,18 @@
 
 	svg {
 		flex-shrink: 0;
-		width: 20px;
-		height: 20px;
+		width: 32px;
+		height: 32px;
+		fill: #9f9f9f;
+	}
+}
+
+.iconCheckboxChecked {
+
+	composes: iconCheckbox;
+
+	svg {
+		fill: #4b30ac;
 	}
 }
 
@@ -58,6 +68,7 @@
 	content: "";
 	position: absolute;
 	opacity: 0;
+	transition: opacity 200ms linear;
 }
 
 .checkboxContainer input:checked ~ .checkmark:after {

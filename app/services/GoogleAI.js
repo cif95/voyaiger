@@ -28,6 +28,7 @@ export class GoogleAIServices {
 	 *     - "beach"
 	 *     - "mountains"
 	 *     - "artAndCulture".
+	 *     - "nightlife"
 	 *
 	 * @returns {Promise<void>} A promise that resolves when the itinerary is generated.
 	 */
@@ -35,7 +36,7 @@ export class GoogleAIServices {
 
 		if (!filters) return;
 
-		const prompt = `generate an itinerary with these filters { peopleCount: ${filters?.peopleCount}, continent: ${filters?.continent}, travelDuration: ${filters.travelDuration}, activities: ${filters?.activities}}`
+		const prompt = `generate an itinerary with these filters { peopleCount: ${filters?.peopleCount}, continent: ${filters?.continent}, travelDuration: ${filters.travelDuration}, activities: ${filters?.activities}, nightlife: ${filters.nightlife}}`
 
 		const response = await axios.post(
 			'/api/googleGemini',

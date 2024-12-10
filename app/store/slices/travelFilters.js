@@ -5,7 +5,8 @@ const initialState = {
 		nature: false,
 		mountains: false,
 		artAndCulture: false,
-		beach: false
+		beach: false,
+		nightlife: false,
 	},
 	peopleCount: "two",
 	continent: "europe",

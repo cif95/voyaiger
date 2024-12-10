@@ -3,7 +3,7 @@ import NatureSVG from "assets/icons/nature.svg";
 import BeachSVG from "assets/icons/beach.svg";
 import CultureSVG from "assets/icons/culture.svg";
 import MountainsSVG from "assets/icons/mountains.svg";
-
+import NightlifeSVG from "assets/icons/nightlife.svg";
 
 const PERIOD_FILTERS = [
 	{
@@ -90,6 +90,11 @@ const TYPE_FILTERS = [
 		label: "Beach",
 		value: "beach",
 		icon: <BeachSVG />
+	},
+	{
+		label: "Nightlife",
+		value: "nightlife",
+		icon: <NightlifeSVG />
 	}
 ]
 
