@@ -15,7 +15,7 @@ export async function POST(req) {
 		}
 
 		const model = genAI.getGenerativeModel({
-			model: "gemini-1.5-flash",
+			model: "models/gemini-1.5-pro",
 			systemInstruction: `
 				Generate a travel itinerary considering this user filters:
 					{ 
@@ -24,7 +24,7 @@ export async function POST(req) {
 						travelDuration: string, => this can be "oneWeekend", "oneWeek" or "twoWeeks"
 						activities: array of strings => this can be "nature", "beach", "mountains", "artAndCulture"
 					}
-				The itinerary should be tailored to suggest the best travel for the given filters.
+				The itinerary should be tailored to suggest the best travel for the given filters, providing rich descriptions about each stop.
 				It can suggest more stops but each stop cannot be more then 2 hours away with public transport.
 				Output the itinerary in JSON following the provided schema.
 			`,
