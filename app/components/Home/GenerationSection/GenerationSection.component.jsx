@@ -39,7 +39,6 @@ export const GenerationSection = () => {
 	return(
 		<section className={styles.generationSection}>
 			<Filters/>
-			<h2>Ready?</h2>
 			<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
 				{isGenerating ? 'Generating..' : 'Generate'}
 			</GenerateButton>

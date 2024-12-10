@@ -44,15 +44,34 @@ select {
 }
 
 .container {
+
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 3.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+
+  @media screen and (min-width: 640px) {
+		gap: 2rem;
+	}
+
+	@media screen and (min-width: 1024px) {
+		gap: 3rem;
+	}
+
+  @media screen and (min-width: 1536px) {
+		gap: 5rem;
+	}
 }
 
 .column {
   display: flex;
-  gap: 5px;
+  gap: 16px;
   flex-direction: column;
 }
 
@@ -72,9 +91,12 @@ select {
   background: #e0e0e0;
   background: linear-gradient(145deg, #ebebeb, #cacaca);
   box-shadow:  8px 8px 16px #bababa,
-              -8px -8px 16px #f8f8f8;
+              -8px -8px 16px #f8f8f88c;
 
   position: relative;
+
+  font-size: inherit;
+  font-family: inherit;
 
   &::before {
 

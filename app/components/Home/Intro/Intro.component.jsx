@@ -1,7 +1,11 @@
 import styles from "./Intro.module.css";
-
+import { useSelector } from "react-redux";
 
 export const Intro = () => {
+
+	const { itinerary } = useSelector((state) => state.itinerary);
+
+	if (itinerary) return <></>;
 
 	return(
 		<section className={styles.section}>

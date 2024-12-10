@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { UnsplashServices } from "services/Unsplash";
 import { OpenWeatherServices } from "services/OpenWeather";
 import Image from "next/image";
+import styles from "./ItineraryStop.module.css";
 import { WeatherWidget } from "./WeatherWidget/WeatherWidget.component";
 
 export const ItineraryStop = ({ stop }) => {
@@ -51,7 +52,7 @@ export const ItineraryStop = ({ stop }) => {
 			{hasLoadedData &&
 				<>
 					<WeatherWidget weather={weather}/>
-					<div className="column">
+					<div className={styles.imageWrapper}>
 						<Image
 							src={image?.urls?.regular}
 							alt={image?.alt_description}

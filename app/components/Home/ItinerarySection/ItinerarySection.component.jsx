@@ -29,7 +29,7 @@ export const ItinerarySection = () => {
 	if (!itinerary) return <></>;
 
 	return(
-		<section className={"column" + styles.itinerary}>
+		<section className={styles.itinerary}>
 
 			<h2>Your itinerary</h2>
 			<h3>{itinerary?.itineraryName}</h3>
