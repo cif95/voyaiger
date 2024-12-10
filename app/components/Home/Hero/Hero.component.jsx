@@ -83,21 +83,8 @@ export const Hero = () => {
 					)
 				})}
 
-				<motion.div
-					className={styles.scrollerIcon}
-					animate={{
-						transform: ['translateY(10px)', 'translateY(0px)', 'translateY(10px)']
-					}}
-					transition={{
-						duration: 0.6,
-						repeat: Infinity,
-						repeatDelay: 0.5,
-						ease: 'easeInOut',
-						type: "tween"
-					}}
-				>
-					<ScrollerSVG />
-				</motion.div>
+				<div className={styles.scrollerIcon}></div>
+
 			</div>
 		</section>
 	)
