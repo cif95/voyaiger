@@ -8,8 +8,6 @@ import { Hero } from "./components/Home/Hero/Hero.component";
 // Redux
 import { Provider } from 'react-redux';
 import store from 'store/store.js';
-// Style
-import "./globals.css";
 
 export default function Home() {
 

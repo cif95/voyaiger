@@ -2,4 +2,19 @@
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
+
+	position: relative;
+}
+
+.imageBox {
+
+	margin: 0 auto;
+
+	img {
+		width: 100%;
+		height: 100%;
+		border-radius: 7px;
+		object-fit: cover;
+		clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 54% 75%, 26% 100%, 26% 75%, 0% 75%);
+	}
 }

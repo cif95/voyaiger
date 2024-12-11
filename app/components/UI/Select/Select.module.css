@@ -1,7 +1,6 @@
 div.selectBox {
 	
 	flex-grow: 1;
-	max-width: max-content;
 	padding: 16px;
 	position: relative;
 	border-radius: 7px;

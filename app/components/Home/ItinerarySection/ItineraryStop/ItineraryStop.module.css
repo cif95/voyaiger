@@ -1,7 +1,8 @@
 .imageWrapper {
 	
 	img {
-		max-width: 100%;
+		max-width: 50%;
 		height: auto;
+		clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 	}
 }

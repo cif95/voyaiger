@@ -43,6 +43,53 @@ select {
   font-family: inherit;
 }
 
+/* UTILITY CLASSES */
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-xs {
+  gap: 8px;
+}
+
+.gap-s {
+  gap: 16px;
+}
+
+.gap-m {
+  gap: 24px;
+}
+
+.gap-l {
+  gap: 32px;
+}
+
+.row.align-center,
+.column.align-center {
+  align-items: center;
+}
+
+.row.justify-center,
+.column.justify-center {
+  justify-content: center;
+}
+
+.row.space-between,
+.column.space-between {
+  justify-content: space-between;
+}
+
+.row.flex-wrap,
+.column.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .container {
 
   width: 100%;
@@ -67,18 +114,6 @@ select {
   @media screen and (min-width: 1536px) {
 		gap: 5rem;
 	}
-}
-
-.column {
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-}
-
-.row {
-  display: flex;
-  gap: 5px;
-  align-items: center;
 }
 
 .primaryButton {
@@ -137,6 +172,8 @@ select {
 
 /* Typography */
 .text-display {
+
+  font-family: var(--font-mohave);
   font-size: 1.5rem;
 
   @media screen and (min-width: 640px) {
@@ -155,6 +192,7 @@ select {
 /* Typography */
 .text-section-heading {
 
+  font-family: var(--font-mohave);
   font-size: 1.2rem;
 
   @media screen and (min-width: 640px) {
@@ -173,6 +211,7 @@ select {
 /* Typography */
 .text-small-heading {
 
+  font-family: var(--font-mohave);
   font-size: 1rem;
 
   @media screen and (min-width: 640px) {

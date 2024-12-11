@@ -54,50 +54,67 @@ export const Filters = () => {
 	return(
 		<section className={styles.section}>
 
-			<motion.h2
-				initial={{ transform: "translateX(-80px)" }}
-				whileInView={{ transform: "translateX(0px)" }}
+			<div className='column'>
+				<motion.h2
+					initial={{ transform: "translateX(-80px)" }}
+					whileInView={{ transform: "translateX(0px)" }}
+					viewport={{ once: true }}
+					transition={{ type: "spring", duration: 0.5 }}
+				>
+					Let&apos;s Start!
+				</motion.h2>
+				<motion.p
+					initial={{ opacity: 0, transform: 'translateY(50%)' }}
+					whileInView={{ opacity: 1, transform: 'translateY(0%)'}}
+					transition={{ duration: 0.5, type: 'spring', bounce: 0.25, delay: 0.5}}
+					viewport={{ once: true }}
+				>
+					Set your preferences, and let the magic happen!
+				</motion.p>
+			</div>
+
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 1, delay: 1}}
 				viewport={{ once: true }}
-				transition={{ type: "spring" }}
+				className='column gap-l'
 			>
-				Let&apos;s Start!
-			</motion.h2>
-
-			<div className={styles.selectInputsWrapper}>
-				<Select
-					value={travelDuration}
-					options={periodFilterConfigs}
-					onChange={onUpdateTravelDurationFilter}
-					label={"Period"}
-				/>
-				<Select
-					value={continent}
-					options={continentFilterConfigs}
-					onChange={onUpdateContinentFilter}
-					label={"Continent"}
-				/>
-				<Select
-					value={peopleCount}
-					options={peopleCountFilterConfigs}
-					onChange={onUpdatePeopleCountFilter}
-					label={"How Many"}
-				/>
-			</div>
-
-			<div className={styles.activitiesColumn}>
-				<h3>Tell me what you like most..</h3>
-				<div className={styles.checkboxInputsWrapper}>
-					{typeFilterConfigs?.map( type => (
-						<IconCheckbox
-							key={type?.label}	
-							label={type?.label}
-							icon={type?.icon}			
-							value={focusActivities[type?.value]}
-							onChange={() => onToggleTypeFilterHandler(type?.value)}
-						/>
-					))}
+				<div className={styles.selectInputsWrapper}>
+					<Select
+						value={travelDuration}
+						options={periodFilterConfigs}
+						onChange={onUpdateTravelDurationFilter}
+						label={"Period"}
+					/>
+					<Select
+						value={continent}
+						options={continentFilterConfigs}
+						onChange={onUpdateContinentFilter}
+						label={"Continent"}
+					/>
+					<Select
+						value={peopleCount}
+						options={peopleCountFilterConfigs}
+						onChange={onUpdatePeopleCountFilter}
+						label={"How Many"}
+					/>
 				</div>
-			</div>
+				<div className={styles.activitiesColumn}>
+					<h3>Tell me what you like most..</h3>
+					<div className={styles.checkboxInputsWrapper}>
+						{typeFilterConfigs?.map( type => (
+							<IconCheckbox
+								key={type?.label}	
+								label={type?.label}
+								icon={type?.icon}			
+								value={focusActivities[type?.value]}
+								onChange={() => onToggleTypeFilterHandler(type?.value)}
+							/>
+						))}
+					</div>
+				</div>
+			</motion.div>
 		</section>
 	)
 }

@@ -1,10 +1,18 @@
 /* From Uiverse.io by MuhammadHasann */ 
 import styles from "./GenerateButton.module.css";
+// Motion
+import { motion } from "motion/react";
 
 export const GenerateButton = ({ onClick, disabled, children}) => {
 
 	return(
-		<div className={styles.container}>
+		<motion.div
+			className={styles.container}
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 1, delay: 1.5}}
+			viewport={{ once: true }}
+		>
 			<button className={styles.genButton} onClick={onClick} disabled={disabled}>
 				<div className={styles.dots_border}></div>
 				<svg
@@ -41,7 +49,7 @@ export const GenerateButton = ({ onClick, disabled, children}) => {
 				<span className={styles.text_button}>{children}</span>
 			</button>
 			<p className={styles.text_button}>Powered by Gemini AI</p>
-		</div>
+		</motion.div>
 	)
 }
 
