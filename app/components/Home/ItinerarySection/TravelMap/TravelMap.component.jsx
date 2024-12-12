@@ -14,7 +14,6 @@ const TravelMap = () => {
 		<MapContainer
 			center={[itinerary?.stops[0].coordinates.latitude, itinerary?.stops[0].coordinates.longitude]}
 			zoom={10}
-			key={JSON.stringify(itinerary?.stops)}
 			style={{ width: "100%", height: "500px", borderRadius: "15px" }}
 		>
 			<TileLayer

@@ -18,6 +18,14 @@ const PERIOD_FILTERS = [
 		value: "twoWeeks",
 		label: "twoWeeks"
 	},
+	{
+		value: "threeWeeks",
+		label: "threeWeeks"
+	},
+	{
+		value: "oneMonth",
+		label: "oneMonth"
+	},
 ];
 
 const CONTINENT_FILTERS = [

@@ -60,7 +60,7 @@ export const Intro = () => {
 				className={styles.imageBox}
 				initial={{ opacity: 0, transform: 'scale(0.5)' }}
 				whileInView={{ opacity: 1, transform: 'scale(1)'}}
-				transition={{ duration: 1, type: 'spring', bounce: 0.25, delay: 2.3}}
+				transition={{ duration: 1, type: 'spring', bounce: 0.25, delay: 2}}
 				viewport={{ once: true }}
 			>
 				<Image

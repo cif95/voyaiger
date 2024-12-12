@@ -7,16 +7,20 @@ export const ItineraryStop = ({ stop }) => {
 	const { weather, image } = stop;
 
 	return(
-		<li key={stop.city}>
+		<li key={stop.city} className={styles.container}>
 
-			<h4>{stop?.city}</h4>
-			<span>Days: {stop?.duration}</span>
-			<span>{stop?.description}</span>
+			<div className="row gap-m space-between">
+				<div className="column" style={{maxWidth: '85%'}}>
+					<div className="row gap-xs">
+						<h4>{stop?.city}</h4>
+						<span>{stop?.duration}</span>
+					</div>
+					<span>{stop?.description}</span>
+				</div>
+				<WeatherWidget weather={weather}/>
+			</div>
 
-
-			<WeatherWidget weather={weather}/>
-			
-			<div className={styles.imageWrapper}>
+			<figure className={styles.imageWrapper}>
 				<Image
 					src={image?.urls?.regular}
 					alt={image?.alt_description}
@@ -24,14 +28,14 @@ export const ItineraryStop = ({ stop }) => {
 					height={image?.height}
 					className="itineraryImage"
 				/>
-				<p>Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">{image?.user?.username}</a> </p>
-			</div>
-
-			Attractions:
+				<figcaption className="text-label">Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">@{image?.user?.username}</a> </figcaption>
+			</figure>
+			
+			<h4>Attractions:</h4>
 			<ol>
 				{stop.attractions.map( attraction => (
 					<li key={attraction?.name}>
-						<span>{attraction?.name}: {attraction?.description}</span>
+						<span> &#x2022; {attraction?.name}: {attraction?.description}</span>
 					</li>
 				) )}
 			</ol>

@@ -17,6 +17,7 @@ export const ItinerarySection = () => {
 	const dispatch = useDispatch();
 
 	const generateNewItineraryHandler = async () => {
+		
 		localStorage.clear();
 		dispatch(itineraryActions.clearGeneratedItinerary());
 	}
@@ -36,18 +37,18 @@ export const ItinerarySection = () => {
 
 			<p>{itinerary?.summary}</p>
 			<h4>Best Period: {itinerary?.bestPeriod}</h4>
-			<p>Notes: {itinerary?.cultureInformation}</p>
+			<p className={styles.notes}>{itinerary?.cultureInformation}</p>
 
-			<h4>Stops: </h4>
+			<h3 className={styles.flavorTitle}>Stops: </h3>
 			
-			<ul>
+			<ul className="column gap-l">
 				{itinerary && itinerary?.stops.map( stop => (<ItineraryStop stop={stop} key={stop?.city}/>))}
 			</ul>
 
 			<TravelMap />
 
-			<div className="column">
-				<h4>Want to generate a new one?</h4>
+			<div className="column gap-s">
+				<h3>Want to generate a new one?</h3>
 				<button onClick={generateNewItineraryHandler} className="primaryButton">
 					Generate New Itinerary
 				</button>

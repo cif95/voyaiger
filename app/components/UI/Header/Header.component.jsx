@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import GithubSVG from "assets/icons/github.svg";
 import styles from "./Header.module.css";
 
@@ -25,7 +26,10 @@ export const Header = () => {
 
 			<h2>VoyAIger</h2>
 
-			<GithubSVG className={styles.githubSvg}/>
+			<a href="https://github.com/cif95/voyaiger" target="_blank" rel="noopener noreferrer">
+				<GithubSVG className={styles.githubSvg}/>
+			</a>
+
 		</header>
 	)
 }

@@ -1,8 +1,25 @@
+.container {
+	
+	padding-bottom: 32px;
+	border-bottom: 1px solid #cbcbcb;
+
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
 .imageWrapper {
+
+	text-align: center;
 	
 	img {
-		max-width: 50%;
+		width: 100%;
 		height: auto;
-		clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+	figcaption {
+		font-style: italic;
 	}
 }

@@ -63,7 +63,7 @@ export const itinerarySchema = {
 					},
 					description: {
 						type: SchemaType.STRING,
-						description: "Brief description of the city",
+						description: "medium long description of the city",
 						nullable: true,
 					},
 					attractions: {
@@ -79,7 +79,7 @@ export const itinerarySchema = {
 								},
 								description: {
 									type: SchemaType.STRING,
-									description: "Description of the attraction",
+									description: "Long Description of the attraction",
 									nullable: false,
 								},
 								coordinates: {

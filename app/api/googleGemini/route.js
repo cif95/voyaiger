@@ -21,11 +21,11 @@ export async function POST(req) {
 					{ 
 						peopleCount: string, => this can be "soloTraveler", "couple", "smallGroup" or "group"
 						continent: string, => this can be "europe", "northAmerica", "southAmerica", "centralAmerica", "asia", "oceania"
-						travelDuration: string, => this can be "oneWeekend", "oneWeek" or "twoWeeks"
+						travelDuration: string, => this can be "oneWeekend", "oneWeek", "twoWeeks", "threeWeeks", "oneMonth"
 						activities: array of strings => this can be "nature", "beach", "mountains", "artAndCulture", "nightlife"
 					}
 				The itinerary should be tailored to suggest the best travel for the given filters, providing rich descriptions about each stop.
-				It can suggest more stops but each stop cannot be more then 2 hours away with public transport.
+				It can suggest more stops but each stop cannot be more then 2 hours away with public transport and all stops must be different from each others.
 				Output the itinerary in JSON following the provided schema.
 			`,
 			generationConfig: {

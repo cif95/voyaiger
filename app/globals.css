@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+ul,ol {
+  list-style-type: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -47,10 +51,12 @@ select {
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 

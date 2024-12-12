@@ -6,8 +6,8 @@ export const WeatherWidget = ({ weather }) => {
 	if (!weather) return <></>;
 
 	return(
-		<div className="column">
-			<h4>Current Weather:</h4>
+		<div className="column gap-xs align-center">
+			<h4>Weather:</h4>
 			<Image
 				className={styles.weatherIcon}
 				src={weather?.iconUrl}
@@ -15,8 +15,9 @@ export const WeatherWidget = ({ weather }) => {
 				width={80}
 				height={80}
 			/>
-			<p>{weather?.description}</p>
-			<p>{weather?.temperature?.current}°</p>
+			<div className="row gap-xs justify-center">
+				<span>{weather?.temperature?.current}°</span>
+			</div>
 		</div>
 	)
 }

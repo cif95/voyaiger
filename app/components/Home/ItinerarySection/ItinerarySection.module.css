@@ -7,23 +7,19 @@
 	align-items: center;
 	justify-content: flex-start;
 
+	h3 {
+		color: #5a55f1;
+	}
+
+	h3, h4 {
+		align-self: flex-start;
+	}
+
 	ul {
-		list-style-type: disc;
 		padding-left: 10px;
-
-		display: flex;
-		gap: 16px;
-		flex-direction: column;
-
-		li {
-			display: flex;
-			gap: 5px;
-			flex-direction: column;
-		}
 	}
+}
 
-	ol {
-		list-style-type: disc;
-		padding-left: 20px; 
-	}
+.notes {
+	font-style: italic;
 }
