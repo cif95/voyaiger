@@ -65,6 +65,7 @@ export const Intro = () => {
 			>
 				<Image
 					src={generationSrc}
+					className={styles.image}
 					alt="man in space suit looking at the earth"
 					layout
 				/>

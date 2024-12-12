@@ -6,22 +6,22 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
+}
 
-	svg {
-		flex-shrink: 0;
-		width: 32px;
-		height: 32px;
-		fill: #9f9f9f;
-	}
+.iconCheckbox svg {
+	flex-shrink: 0;
+	width: 32px;
+	height: 32px;
+	fill: #9f9f9f;
 }
 
 .iconCheckboxChecked {
 
 	composes: iconCheckbox;
+}
 
-	svg {
-		fill: #4b30ac;
-	}
+.iconCheckboxChecked svg {
+	fill: #4b30ac;
 }
 
 .checkboxContainer {

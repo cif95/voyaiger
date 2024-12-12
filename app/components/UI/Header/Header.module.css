@@ -28,10 +28,10 @@
 	&:hover {
 		transform: scale(1.1) translate3d(5px, -2px,-250px) perspective(200px);
 	}
+}
 
-	path {
-		fill: white;
-	}
+.githubSvg path {
+	fill: white;
 }
 
 .backgroundLayer {

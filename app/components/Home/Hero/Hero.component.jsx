@@ -1,16 +1,10 @@
 'use client';
 
 import { useEffect, useState } from "react";
-
 // Style
 import styles from "./Hero.module.css";
-
-// Assets
-import ScrollerSVG from "assets/icons/scroller.svg";
-
 // Motion
 import { motion } from "motion/react";
-
 // Helpers
 import { 
 	carouselFrameVariants,
@@ -52,7 +46,7 @@ export const Hero = () => {
 
 			<div className={styles.imageWrapper}>
 
-				<h1 className="text-display">
+				<h1 className={`${styles.heroTitle} text-display`}>
 					<motion.span
 						key={heroText}
 						initial={{ width: 0}}
@@ -74,6 +68,7 @@ export const Hero = () => {
 					return(
 						<motion.img
 							key={frame?.imgSrc}
+							className={styles.image}
 							variants={carouselFrameVariants}
 							initial={"initial"}
 							animate={isActiveFrame ? "fadeIn" : 'initial'}

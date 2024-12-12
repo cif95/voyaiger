@@ -11,15 +11,15 @@
 .imageWrapper {
 
 	text-align: center;
-	
-	img {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-		border-radius: 8px;
-	}
+}
 
-	figcaption {
-		font-style: italic;
-	}
+.image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
+.figcaption {
+	font-style: italic;
 }

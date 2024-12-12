@@ -7,32 +7,33 @@ div.selectBox {
 	background: #e0e0e0;
 	box-shadow:  4px 4px 7px #bababa,
 				-4px -4px 7px #eee;
+}
 
-	label {
-		position: absolute;
-		top: -20px;
-		left: 0;
-		padding: 0 9px;
-		color: grey;
+div.selectBox select {
 
-		@media screen and (min-width: 640px) {
-			top: -25px;
-		}
-	
-		@media screen and (min-width: 1024px) {
-			top: -25px;
-		}
-	
-		@media screen and (min-width: 1536px) {
-			top: -32px;
-		}
+	width: 100%;
+	border: none;
+	outline: none;
+	border-radius: 24px;
+	background: #e0e0e0;
+}
+
+div.selectBox label {
+	position: absolute;
+	top: -20px;
+	left: 0;
+	padding: 0 9px;
+	color: grey;
+
+	@media screen and (min-width: 640px) {
+		top: -25px;
 	}
 
-	select {
-		width: 100%;
-		border: none;
-		outline: none;
-		border-radius: 24px;
-		background: #e0e0e0;
+	@media screen and (min-width: 1024px) {
+		top: -25px;
+	}
+
+	@media screen and (min-width: 1536px) {
+		top: -32px;
 	}
 }

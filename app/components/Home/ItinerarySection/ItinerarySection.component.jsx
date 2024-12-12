@@ -33,22 +33,22 @@ export const ItinerarySection = () => {
 		<section className={styles.itinerary}>
 
 			<h2>Your itinerary</h2>
-			<h3>{itinerary?.itineraryName}</h3>
+			<h3 className={styles.title}>{itinerary?.itineraryName}</h3>
 
 			<p>{itinerary?.summary}</p>
-			<h4>Best Period: {itinerary?.bestPeriod}</h4>
+			<h4 className={styles.title}>Best Period: {itinerary?.bestPeriod}</h4>
 			<p className={styles.notes}>{itinerary?.cultureInformation}</p>
 
-			<h3 className={styles.flavorTitle}>Stops: </h3>
+			<h3 className={styles.title}>Stops: </h3>
 			
-			<ul className="column gap-l">
+			<ul className={`${styles.list} column gap-l`}>
 				{itinerary && itinerary?.stops.map( stop => (<ItineraryStop stop={stop} key={stop?.city}/>))}
 			</ul>
 
 			<TravelMap />
 
 			<div className="column gap-s">
-				<h3>Want to generate a new one?</h3>
+				<h3 className={styles.title}>Want to generate a new one?</h3>
 				<button onClick={generateNewItineraryHandler} className="primaryButton">
 					Generate New Itinerary
 				</button>

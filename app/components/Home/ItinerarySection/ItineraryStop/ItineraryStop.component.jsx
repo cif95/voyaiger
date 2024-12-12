@@ -26,9 +26,9 @@ export const ItineraryStop = ({ stop }) => {
 					alt={image?.alt_description}
 					width={image?.width}
 					height={image?.height}
-					className="itineraryImage"
+					className={styles.image}
 				/>
-				<figcaption className="text-label">Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">@{image?.user?.username}</a> </figcaption>
+				<figcaption className={`${styles.image} text-label`}>Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">@{image?.user?.username}</a> </figcaption>
 			</figure>
 			
 			<h4>Attractions:</h4>
