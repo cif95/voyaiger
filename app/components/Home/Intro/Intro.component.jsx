@@ -30,7 +30,7 @@ export const Intro = () => {
 				className="text-small-heading"
 				initial={{ opacity: 0, transform: 'scale(0.7)' }}
 				whileInView={{ opacity: 1, transform: 'scale(1)'}}
-				transition={{ duration: 0.8, type: 'spring', delay: 0.7}}
+				transition={{ duration: 0.8, type: 'spring', delay: 0.5}}
 				viewport={{ once: true }}
 			>
 				Say goodbye to the hassle of organizing your next trip! 🌍✨ <br/>
@@ -40,7 +40,7 @@ export const Intro = () => {
 			<motion.p
 				initial={{ opacity: 0, transform: 'translateY(50%)' }}
 				whileInView={{ opacity: 1, transform: 'translateY(0%)'}}
-				transition={{ duration: 0.5, type: 'spring', bounce: 0.25, delay: 1.2}}
+				transition={{ duration: 0.5, type: 'spring', bounce: 0.25, delay: 1}}
 				viewport={{ once: true }}
 			>
 				Whether you&apos;re into scenic escapes, vibrant city life, or off-the-beaten-path adventures, just set your preferences, and let the magic happen!
@@ -49,7 +49,7 @@ export const Intro = () => {
 			<motion.p
 				initial={{ opacity: 0, transform: 'translateY(-50%)' }}
 				whileInView={{ opacity: 1, transform: 'translateY(0%)'}}
-				transition={{ duration: 0.5, type: 'spring', bounce: 0.25, delay: 1.8}}
+				transition={{ duration: 0.5, type: 'spring', bounce: 0.25, delay: 1.5}}
 				viewport={{ once: true }}
 			>
 				Why settle for average when your adventure can be extraordinary?<br/>
@@ -60,7 +60,7 @@ export const Intro = () => {
 				className={styles.imageBox}
 				initial={{ opacity: 0, transform: 'scale(0.5)' }}
 				whileInView={{ opacity: 1, transform: 'scale(1)'}}
-				transition={{ duration: 1, type: 'spring', bounce: 0.25, delay: 2}}
+				transition={{ duration: 1, delay: 1.5}}
 				viewport={{ once: true }}
 			>
 				<Image

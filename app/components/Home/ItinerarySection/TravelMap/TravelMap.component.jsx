@@ -10,7 +10,7 @@ const TravelMap = () => {
 	const center = [itinerary?.stops[0].coordinates.latitude, itinerary?.stops[0].coordinates.longitude];
 
 	return (
-		<Map height={300} defaultCenter={center} defaultZoom={3} style={{ borderRadius: '7px'}}>
+		<Map height={300} defaultCenter={center} defaultZoom={3}>
 			<ZoomControl />
 			{itinerary?.stops?.map((stop) => (
 				<Marker key={stop.city} width={50} anchor={[stop.coordinates.latitude, stop.coordinates.longitude]} />
