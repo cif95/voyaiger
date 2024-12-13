@@ -25,7 +25,9 @@ export async function POST(req) {
 						activities: array of strings => this can be "nature", "beach", "mountains", "artAndCulture", "nightlife"
 					}
 				The itinerary should be tailored to suggest the best travel for the given filters, providing rich descriptions about each stop.
-				It can suggest more stops but each stop cannot be more then 2 hours away with public transport and all stops must be different from each others.
+				Il the user has not selected any filters from activities, generate it by the most popular destinations.
+				The itinerary can have more stops but each stop cannot be more then 2 hours away with public transport and all stops must be different from each others.
+				Duration in days of each stop is proportioned to the amount of attractions that the place offers.
 				Each stop must be in the same continent as the provided filter.
 				Output the itinerary in JSON following the provided schema.
 			`,
