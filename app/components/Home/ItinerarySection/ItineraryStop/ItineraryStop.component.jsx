@@ -10,7 +10,7 @@ export const ItineraryStop = ({ stop }) => {
 		<li key={stop.city} className={styles.container}>
 
 			<div className="row gap-m space-between">
-				<div className="column" style={{maxWidth: '85%'}}>
+				<div className="column" style={{maxWidth: '50%'}}>
 					<div className="row gap-xs">
 						<h4>{stop?.city}</h4>
 						<span>{stop?.duration}</span>

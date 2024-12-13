@@ -1,6 +1,6 @@
 :root {
   --color-font: #294457;
-  --color-secondary-font: 868298;
+  --color-secondary-font: #1a1320;
 }
 
 html, body {
@@ -127,9 +127,11 @@ select {
   border: none;
   padding: 0.8rem 1.2rem;
   font-size: 14px;
+  font-weight: 700;
 
   border-radius: 8px;
   background: #e0e0e0;
+  color: var(--color-secondary-font);
   background: linear-gradient(145deg, #ebebeb, #cacaca);
   box-shadow:  8px 8px 16px #bababa,
               -8px -8px 16px #f8f8f88c;
@@ -234,7 +236,7 @@ select {
 }
 
 .text-label {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--color-secondary-font);
 
   @media screen and (min-width: 640px) {
