@@ -26,6 +26,7 @@ export async function POST(req) {
 					}
 				The itinerary should be tailored to suggest the best travel for the given filters, providing rich descriptions about each stop.
 				It can suggest more stops but each stop cannot be more then 2 hours away with public transport and all stops must be different from each others.
+				Each stop must be in the same continent as the provided filter.
 				Output the itinerary in JSON following the provided schema.
 			`,
 			generationConfig: {
