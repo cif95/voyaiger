@@ -32,6 +32,7 @@ export async function POST(req) {
 			generationConfig: {
 				responseMimeType: "application/json",
 				responseSchema: itinerarySchema,
+				temperature: 0
 			},
 		});
 
