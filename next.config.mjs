@@ -15,15 +15,19 @@ const nextConfig = {
 			}
 		],
 	},
-	experimental: {
-		turbo: {
-			rules: {
-				'*.svg': {
-					loaders: ['@svgr/webpack'],
-					as: '*.js',
+	webpack: (config) => {
+		// Add custom loader rules (if necessary)
+		config.module.rules.push({
+			test: /\.svg$/,
+			use: [
+				{
+					loader: '@svgr/webpack',
+					options: { svgo: true, titleProp: true },
 				},
-			},
-		},
+			],
+		});
+
+		return config;
 	},
 };
 

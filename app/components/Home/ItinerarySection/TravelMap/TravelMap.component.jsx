@@ -1,6 +1,5 @@
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import { useSelector } from 'react-redux';
+import { Map, Marker, ZoomControl } from "pigeon-maps";
 
 const TravelMap = () => {
 
@@ -8,37 +7,16 @@ const TravelMap = () => {
 
 	if (!itinerary) return <></>;
 
-	const path = itinerary?.stops.map(stop => [stop.coordinates.latitude, stop.coordinates.longitude]);
+	const center = [itinerary?.stops[0].coordinates.latitude, itinerary?.stops[0].coordinates.longitude];
 
 	return (
-		<MapContainer
-			center={[itinerary?.stops[0].coordinates.latitude, itinerary?.stops[0].coordinates.longitude]}
-			zoom={10}
-			style={{ width: "100%", height: "500px", borderRadius: "15px" }}
-		>
-			<TileLayer
-				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-			/>
-
-			<Polyline 
-				positions={path} 
-				color="#50089e" 
-			/>
-
-			{itinerary.stops.map((stop, index) => (
-				<Marker
-					key={index}
-					opacity={0}
-					position={[stop.coordinates?.latitude, stop.coordinates?.longitude]}
-				>
-					<Popup>
-						<b>{stop.city}</b>
-					</Popup>
-				</Marker>
+		<Map height={300} defaultCenter={center} defaultZoom={3} style={{ borderRadius: '7px'}}>
+			<ZoomControl />
+			{itinerary?.stops?.map((stop) => (
+				<Marker key={stop.city} width={50} anchor={[stop.coordinates.latitude, stop.coordinates.longitude]} />
 			))}
-		</MapContainer>
-	);
+		</Map>
+	)
 };
 
 export default TravelMap;
