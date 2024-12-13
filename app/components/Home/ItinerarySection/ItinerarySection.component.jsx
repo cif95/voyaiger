@@ -50,9 +50,9 @@ export const ItinerarySection = () => {
 			<TravelMap />
 
 			<div className="column gap-s">
-				<h3 className={styles.title}>Want to generate a new one?</h3>
+				<h3 className={styles.title}>Want to generate one more?</h3>
 				<button onClick={generateNewItineraryHandler} className="primaryButton">
-					Generate New Itinerary
+					Back to Generation Lab &#128161;
 				</button>
 			</div>
 
