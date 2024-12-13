@@ -13,3 +13,9 @@
 		gap: 3rem;
 	}
 }
+
+.errorMessage {
+	font-size: 14px;
+	text-align: center;
+	margin: 0 auto;
+}

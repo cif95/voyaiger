@@ -17,7 +17,7 @@ export const GenerationSection = () => {
 		travelDuration
 	} = useSelector((state) => state.travelFilters);
 
-	const { isGenerating, itinerary } = useSelector((state) => state.itinerary);
+	const { isGenerating, hasGenerationError, itinerary } = useSelector((state) => state.itinerary);
 
 	const generateItineraryHandler = () => {
 
@@ -42,6 +42,7 @@ export const GenerationSection = () => {
 			<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
 				{isGenerating ? 'Generating..' : 'Generate'}
 			</GenerateButton>
+			{hasGenerationError && <p className={styles.errorMessage}>Oops! Something went wrong &#128542; Retry later</p>}
 		</section>
 	)
 }
