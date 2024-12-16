@@ -1,9 +1,12 @@
 'use client';
 
+// Next
 import Link from "next/link";
+// Assets
 import GithubSVG from "assets/icons/github.svg";
+// Style
 import styles from "./Header.module.css";
-
+// Motion
 import { motion, useScroll, useTransform } from 'motion/react';
 
 export const Header = () => {
@@ -24,7 +27,9 @@ export const Header = () => {
 				style={{ opacity: backgroundColorOpacity}}
 			/>
 
-			<h2>VoyAIger</h2>
+			<Link href="/">
+				<h2>VoyAIger</h2>
+			</Link>
 
 			<a href="https://github.com/cif95/voyaiger" target="_blank" rel="noopener noreferrer">
 				<GithubSVG className={styles.githubSvg}/>

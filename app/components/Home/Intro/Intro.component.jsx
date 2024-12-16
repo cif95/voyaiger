@@ -2,7 +2,7 @@
 
 import styles from "./Intro.module.css";
 // Motion
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from 'motion/react';
 // Next
 import Image from "next/image";
 // Assets
@@ -10,8 +10,16 @@ import generationSrc from "assets/images/generation.jpg";
 
 export const Intro = () => {
 
+	const { scrollYProgress } = useScroll();
+
+	const opacity = useTransform(
+		scrollYProgress,
+		[0.3, 0.5],
+		[0, 1]
+	);
+
 	return(
-		<section className={styles.section}>
+		<motion.section className={styles.section} style={{ opacity }}>
 
 			<motion.h2
 				className="text-section-heading"
@@ -70,6 +78,6 @@ export const Intro = () => {
 				/>
 			</motion.div>
 
-		</section>
+		</motion.section>
 	)
 }
