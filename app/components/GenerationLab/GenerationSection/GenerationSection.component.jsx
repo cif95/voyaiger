@@ -38,11 +38,13 @@ export const GenerationSection = () => {
 
 	return(
 		<section className={styles.generationSection}>
-			<Filters/>
-			<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
-				{isGenerating ? 'Generating..' : 'Generate'}
-			</GenerateButton>
-			{hasGenerationError && <p className={styles.errorMessage}>Oops! Something went wrong &#128542; Retry later</p>}
+			<div className="container">
+				<Filters/>
+				<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
+					{isGenerating ? 'Generating..' : 'Generate'}
+				</GenerateButton>
+				{hasGenerationError && <p className={styles.errorMessage}>Oops! Something went wrong &#128542; Retry later</p>}
+			</div>
 		</section>
 	)
 }

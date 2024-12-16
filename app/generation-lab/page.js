@@ -10,7 +10,7 @@ export default function GenerationLabPage() {
 
 	return (
 		<main>
-			<div className="container">
+			<div>
 				<Provider store={store}>
 					<GenerationSection />
 				</Provider>

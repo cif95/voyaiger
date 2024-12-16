@@ -1,12 +1,15 @@
 .generationSection {
 
 	width: 100%;
+	padding-top: 50px;
 	
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
 
+	background-image: url("../../../assets/images/pattern.png");
+	background-repeat: no-repeat;
 	gap: 3.5rem;
 
 	@media screen and (min-width: 1024px) {
