@@ -55,10 +55,10 @@ export const Filters = () => {
 		<section className={styles.section}>
 
 			<div className={styles.inputsColumns}>
-				<div className="column gap-xs">
+				<div className="column gap-l">
 					<motion.h2
-						initial={{ transform: "translateX(-80px)" }}
-						whileInView={{ transform: "translateX(0px)" }}
+						initial={{ transform: "translateX(-80px)", opacity: 0 }}
+						whileInView={{ transform: "translateX(0px)", opacity: 1 }}
 						viewport={{ once: true }}
 						transition={{ type: "spring", duration: 0.5 }}
 					>
@@ -104,8 +104,21 @@ export const Filters = () => {
 			</div>
 
 			<div className={styles.inputsColumns}>
-				<h3><i>Tailor</i> Your Adventure:</h3>
-				<div className={styles.checkboxInputsWrapper}>
+				<motion.h3
+					initial={{ transform: "translateX(-80px)", opacity: 0 }}
+					whileInView={{ transform: "translateX(0px)", opacity: 1 }}
+					viewport={{ once: true }}
+					transition={{ type: "spring", duration: 0.5, delay: 1.2 }}
+				>
+					<i>Tailor</i> Your Adventure:
+				</motion.h3>
+				<motion.div
+					className={styles.checkboxInputsWrapper}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1, delay: 1.2}}
+					viewport={{ once: true }}
+				>
 					{typeFilterConfigs?.map( type => (
 						<IconCheckbox
 							key={type?.label}	
@@ -115,7 +128,7 @@ export const Filters = () => {
 							onChange={() => onToggleTypeFilterHandler(type?.value)}
 						/>
 					))}
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	)

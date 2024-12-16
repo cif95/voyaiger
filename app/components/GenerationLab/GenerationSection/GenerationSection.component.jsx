@@ -1,15 +1,24 @@
 'use client';
 
+// React
+import { useEffect } from "react";
+// Style
 import styles from "./GenerationSection.module.css";
+// Redux
 import { useDispatch, useSelector } from "react-redux";
 import { itineraryActions } from "store/slices/itinerary";
+// Components
 import { GenerateButton } from "./GenerateButton/GenerateButton.component";
 import { Filters } from "./Filters/Filters.component";
+// Next
+import { useRouter } from 'next/navigation'
 
 
 export const GenerationSection = () => {
 
+	const router = useRouter();
 	const dispatch = useDispatch();
+	
 	const {
 		focusActivities,
 		peopleCount,
@@ -34,15 +43,21 @@ export const GenerationSection = () => {
 		dispatch(itineraryActions.generateItinerary({ filters }));
 	}
 
-	if (itinerary) return <></>;
+	useEffect(() => {
+		if (itinerary) {
+			router.push('/itinerary');
+		}
+	}, [itinerary, router]);
 
 	return(
 		<section className={styles.generationSection}>
-			<Filters/>
-			<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
-				{isGenerating ? 'Generating..' : 'Generate'}
-			</GenerateButton>
-			{hasGenerationError && <p className={styles.errorMessage}>Oops! Something went wrong &#128542; Retry later</p>}
+			<div className="container">
+				<Filters/>
+				<GenerateButton onClick={generateItineraryHandler} className="primaryButton" disabled={isGenerating}>
+					{isGenerating ? 'Generating..' : 'Generate'}
+				</GenerateButton>
+				{hasGenerationError && <p className={styles.errorMessage}>Oops! Something went wrong &#128542; Retry later</p>}
+			</div>
 		</section>
 	)
 }

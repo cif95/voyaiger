@@ -6,8 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { itineraryActions } from "store/slices/itinerary";
 // Next
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/navigation'
+import Link from "next/link";
 // Style
 import styles from "./ItinerarySection.module.css";
+// Components
 import { ItineraryStop } from "./ItineraryStop/ItineraryStop.component";
 // Components
 const TravelMap = dynamic(() => import('./TravelMap/TravelMap.component'), { ssr: false });
@@ -17,11 +20,13 @@ export const ItinerarySection = () => {
 
 	const { itinerary } = useSelector((state) => state.itinerary);
 	const dispatch = useDispatch();
+	const router = useRouter();
 
 	const generateNewItineraryHandler = async () => {
 		
 		localStorage.clear();
 		dispatch(itineraryActions.clearGeneratedItinerary());
+		router.push('/generation-lab');
 	}
 
 	useEffect(() => {
@@ -29,7 +34,14 @@ export const ItinerarySection = () => {
 		if (cachedItinerary) dispatch(itineraryActions.setItinerary(JSON.parse(cachedItinerary)));
 	}, [dispatch]);
 
-	if (!itinerary) return <></>;
+	if (!itinerary) return (
+		<section className={styles.itinerary}>
+			<h2>No itinerary yet.</h2>
+			<Link href="/generation-lab" className="primaryButton">
+				Generation Lab &#128161;
+			</Link>
+		</section>
+	);
 
 	return(
 		<section className={styles.itinerary}>

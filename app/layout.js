@@ -1,7 +1,8 @@
-
 import "./globals.css";
+// Components
 import { Header } from "./components/UI/Header/Header.component";
 import { Footer } from "components/UI/Footer/Footer.component";
+// Fonts
 import { Nunito } from 'next/font/google';
 import { Nunito_Sans } from 'next/font/google';
 
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${nunito.variable} ${nunitoSans.variable} antialiased`}> 
         <Header/>
-        {children}
+          {children}
         <Footer/>
       </body>
     </html>

@@ -3,6 +3,12 @@
   --color-secondary-font: #1a1320;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html, body {
   height: 100%;
 }
@@ -28,10 +34,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-mohave);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ul,ol {
@@ -178,6 +183,32 @@ select {
   }
 }
 
+.highlightButton {
+
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 14px;
+    font-weight: 700;
+  
+    border-radius: 8px;
+    background: #e0e0e0;
+    color: var(--color-secondary-font);
+    background: #cfe6f1;
+    box-shadow: inset 8px 8px 16px #b2c6cf,
+                inset -8px -8px 16px #ecffff;
+  
+    position: relative;
+  
+    font-size: inherit;
+    font-family: inherit;
+
+  
+    &:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+}
+
 /* Typography */
 .text-display {
 
@@ -197,7 +228,6 @@ select {
 	}
 }
 
-/* Typography */
 .text-section-heading {
 
   font-family: var(--font-mohave);
@@ -216,7 +246,6 @@ select {
 	}
 }
 
-/* Typography */
 .text-small-heading {
 
   font-family: var(--font-mohave);

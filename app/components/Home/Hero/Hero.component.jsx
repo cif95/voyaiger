@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 // Style
 import styles from "./Hero.module.css";
 // Motion
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 // Helpers
 import { 
 	carouselFrameVariants,
@@ -43,9 +43,7 @@ export const Hero = () => {
 
 	return(
 		<section className={styles.hero}>
-
 			<div className={styles.imageWrapper}>
-
 				<h1 className={`${styles.heroTitle} text-display`}>
 					<motion.span
 						key={heroText}
@@ -62,7 +60,6 @@ export const Hero = () => {
 						className={styles.caret}
 					/>
 				</h1>
-
 				{carouselFrames.map((frame, index) => {
 					const isActiveFrame = carouselIndex === index;
 					return(
@@ -77,9 +74,7 @@ export const Hero = () => {
 						/>
 					)
 				})}
-
 				<div className={styles.scrollerIcon}></div>
-
 			</div>
 		</section>
 	)

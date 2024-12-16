@@ -16,15 +16,15 @@ const PERIOD_FILTERS = [
 	},
 	{
 		value: "twoWeeks",
-		label: "twoWeeks"
+		label: "Two Weeks"
 	},
 	{
 		value: "threeWeeks",
-		label: "threeWeeks"
+		label: "Three Weeks"
 	},
 	{
 		value: "oneMonth",
-		label: "oneMonth"
+		label: "One Month"
 	},
 ];
 
@@ -62,7 +62,7 @@ const CONTINENT_FILTERS = [
 const PEOPLE_COUNT_FILTERS = [
 	{
 		value: "one",
-		label: "Solo"
+		label: "Solo Traveler"
 	},
 	{
 		value: "two",
