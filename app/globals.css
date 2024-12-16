@@ -183,6 +183,32 @@ select {
   }
 }
 
+.highlightButton {
+
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 14px;
+    font-weight: 700;
+  
+    border-radius: 8px;
+    background: #e0e0e0;
+    color: var(--color-secondary-font);
+    background: #cfe6f1;
+    box-shadow: inset 8px 8px 16px #b2c6cf,
+                inset -8px -8px 16px #ecffff;
+  
+    position: relative;
+  
+    font-size: inherit;
+    font-family: inherit;
+
+  
+    &:disabled {
+      cursor: default;
+      opacity: 0.7;
+    }
+}
+
 /* Typography */
 .text-display {
 

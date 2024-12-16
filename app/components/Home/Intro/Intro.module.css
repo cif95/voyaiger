@@ -25,14 +25,23 @@
 
 .imageBox {
 
-	margin: 0 auto;
 	text-align: center;
 }
 
+.link {
+	position: relative;
+	z-index: 2;
+}
+
 .image {
-	width: 50%;
+	
+	width: 80%;
 	height: 100%;
 	border-radius: 7px;
 	object-fit: cover;
 	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 54% 75%, 26% 100%, 26% 75%, 0% 75%);
+
+	@media screen and (min-width: 640px) {
+		width: 30%;
+	}
 }
