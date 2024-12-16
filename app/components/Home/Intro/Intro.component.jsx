@@ -1,15 +1,14 @@
+'use client';
+
 import styles from "./Intro.module.css";
-import { useSelector } from "react-redux";
 // Motion
 import { motion } from "motion/react";
+// Next
 import Image from "next/image";
+// Assets
 import generationSrc from "assets/images/generation.jpg";
 
 export const Intro = () => {
-
-	const { itinerary } = useSelector((state) => state.itinerary);
-
-	if (itinerary) return <></>;
 
 	return(
 		<section className={styles.section}>
