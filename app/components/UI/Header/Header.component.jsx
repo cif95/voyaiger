@@ -46,6 +46,10 @@ export const Header = () => {
 				<h2>VoyAIger</h2>
 			</Link>
 
+			<Link href="/generation-lab" className={styles.navLink}>
+				<h2>Lab</h2>
+			</Link>
+
 			<a href="https://github.com/cif95/voyaiger" target="_blank" rel="noopener noreferrer">
 				<GithubSVG className={styles.githubSvg}/>
 			</a>

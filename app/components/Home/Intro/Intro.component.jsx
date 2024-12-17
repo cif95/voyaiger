@@ -16,41 +16,28 @@ export const Intro = () => {
 	const { scrollYProgress } = useScroll();
 
 	const {
-		container,
-		title,
-		paragraphs,
+		content,
 		image,
 		link
 	} = animationConfigs;
 
-	const opacity = useTransform(
+
+	const contentTransform = useTransform(
 		scrollYProgress,
-		container?.opacity?.inputs,
-		container?.opacity?.outputs
+		content?.transform?.inputs,
+		content?.transform?.outputs
 	);
 
-	const titleTransform = useTransform(
+	const contentOpacity = useTransform(
 		scrollYProgress,
-		title?.transform?.inputs,
-		title?.transform?.outputs
+		content?.opacity?.inputs,
+		content?.opacity?.outputs
 	);
 
-	const titleOpacity = useTransform(
+	const linkOpacity = useTransform(
 		scrollYProgress,
-		title?.opacity?.inputs,
-		title?.opacity?.outputs
-	);
-
-	const paragraphOpacity = useTransform(
-		scrollYProgress,
-		paragraphs?.opacity?.inputs,
-		paragraphs?.opacity?.outputs
-	);
-
-	const paragraphTransform = useTransform(
-		scrollYProgress,
-		paragraphs?.transform?.inputs,
-		paragraphs?.transform?.outputs
+		link?.opacity?.inputs,
+		link?.opacity?.outputs
 	);
 
 	const imageOpacity = useTransform(
@@ -65,12 +52,6 @@ export const Intro = () => {
 		image?.transform?.outputs
 	);
 
-	const linkOpacity = useTransform(
-		scrollYProgress,
-		link?.opacity?.inputs,
-		link?.opacity?.outputs
-	);
-
 	const linkTransform = useTransform(
 		scrollYProgress,
 		link?.transform?.inputs,
@@ -78,52 +59,52 @@ export const Intro = () => {
 	);
 
 	return(
-		<motion.section className={styles.section} style={{ opacity }}>
+		<section>
+			<motion.div className={styles.section} style={{ transform: contentTransform, opacity: contentOpacity }}>
+				<h2 className="text-section-heading">
+					Discover Your Perfect Journey
+					<br/>
+					with AI-Powered Travel Planning
+				</h2>
 
-			<motion.h2
-				className="text-section-heading"
-				style={{ transform: titleTransform, opacity: titleOpacity }}
-			>
-				Discover Your Perfect Journey
-				<br/>
-				with AI-Powered Travel Planning
-			</motion.h2>
+				<h3 className="text-small-heading">
+					Say goodbye to the hassle of organizing your next trip! 🌍✨ <br/>
+					With VoyAIger you get tailor-made itineraries designed by AI to fit your style.
+				</h3>
 
-			<motion.h3
-				className="text-small-heading"
-				style={{ transform: paragraphTransform, opacity: paragraphOpacity }}
-			>
-				Say goodbye to the hassle of organizing your next trip! 🌍✨ <br/>
-				With VoyAIger you get tailor-made itineraries designed by AI to fit your style.
-			</motion.h3>
+				<p>
+					Why settle for average when your adventure can be extraordinary?<br/>
+					👉 Start planning today and turn your dream vacation into reality!
+				</p>
 
-			<motion.p
-				style={{ transform: paragraphTransform, opacity: paragraphOpacity }}
-			>
-				Why settle for average when your adventure can be extraordinary?<br/>
-				👉 Start planning today and turn your dream vacation into reality!
-			</motion.p>
-
-			<motion.div
-				className={styles.imageBox}
-				style={{ transform: imageTransform, opacity: imageOpacity }}
-			>
-				<Image
-					src={generationSrc}
-					className={styles.image}
-					alt="man in space suit looking at the earth"
-					layout
-				/>
+				<motion.div
+					className={styles.imageBox}
+					style={{ transform: imageTransform, opacity: imageOpacity }}
+				>
+					<Image
+						src={generationSrc}
+						className={styles.image}
+						alt="man in space suit looking at the earth"
+						layout
+					/>
+				</motion.div>
+				<motion.div style={{ transform: linkTransform, opacity: linkOpacity }}>
+					<motion.p
+						animate={{ transform: ['scale(0.8)','scale(1)']}}
+						transition={{
+							duration: 2,
+							repeat: Infinity,
+							ease: "easeInOut",
+							repeatType: "reverse",
+						}}
+					>
+						<Link href="/generation-lab" className="highlightButton">
+							Start Now!
+						</Link>
+					</motion.p>
+				</motion.div>
 			</motion.div>
 
-			<motion.div
-				style={{ transform: linkTransform, opacity: linkOpacity }}
-			>
-				<Link href="/generation-lab" className="highlightButton">
-					Start Now!
-				</Link>
-			</motion.div>
-
-		</motion.section>
+		</section>
 	)
 }

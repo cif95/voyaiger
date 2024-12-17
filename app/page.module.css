@@ -1,6 +1,10 @@
 .scrollContainer {
 	position: sticky;
-	height: 6000px;
+	height: 3000px;
+
+	@media screen and (min-width: 1024px) {
+		height: 4000px;
+	}
 }
 
 .scrollContent {

@@ -55,3 +55,11 @@
 	transition: opacity 250ms easeInOut;
 	z-index: -1;
 }
+
+.navLink {
+	color: #dbd3f3;
+	font-size: 1.5vh;
+	margin-left: auto;
+	margin-right: 16px;
+	text-decoration: underline;
+}
