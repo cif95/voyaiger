@@ -15,20 +15,20 @@ export async function POST(req) {
 		}
 
 		const model = genAI.getGenerativeModel({
-			model: "models/gemini-1.5-flash",
+			model: "models/gemini-1.5-pro",
 			systemInstruction: `
 				Generate a travel itinerary considering this user filters:
 					{ 
-						peopleCount: string, => this can be "soloTraveler", "couple", "smallGroup" or "group"
-						continent: string, => this can be "europe", "northAmerica", "southAmerica", "centralAmerica", "asia", "oceania"
-						travelDuration: string, => this can be "oneWeekend", "oneWeek", "twoWeeks", "threeWeeks", "oneMonth"
-						activities: array of strings => this can be "nature", "beach", "mountains", "artAndCulture", "nightlife"
+						peopleCount: string, => number of people
+						continent: string, => continent of travel itinerary, all stops must belong to this
+						travelDuration: string, => duration of the travel, can be "oneWeekend", "oneWeek", "twoWeeks", "threeWeeks", "oneMonth"
+						activities: array of strings => focus of travel, this can be "nature", "beach", "mountains", "artAndCulture" or "nightlife"
 					}
 				The itinerary should be tailored to suggest the best travel for the given filters, providing rich descriptions about each stop.
-				Il the user has not selected any filters from activities, generate it by the most popular destinations.
-				The itinerary can have more stops but each stop cannot be more then 2 hours away with public transport and all stops must be different from each others.
+				Il the user has not selected any focus activities, generate it considering the most popular cities.
+				The itinerary can have more stops but each stop cannot be more then 2 hours away with public transport.
+				All stops must be different from each other and each stop must be in the same continent as the provided filter.
 				Duration in days of each stop is proportioned to the amount of attractions that the place offers.
-				Each stop must be in the same continent as the provided filter.
 				Output the itinerary in JSON following the provided schema.
 			`,
 			generationConfig: {
