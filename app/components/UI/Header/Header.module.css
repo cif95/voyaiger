@@ -51,13 +51,13 @@
 	right: 0;
 	bottom: 0;
 
-	background-color: black;
+	background-color: #00000078;
 	transition: opacity 250ms easeInOut;
 	z-index: -1;
 }
 
 .navLink {
-	color: #dbd3f3;
+	color:rgb(255, 255, 255);
 	font-size: 1.5vh;
 	margin-left: auto;
 	margin-right: 16px;

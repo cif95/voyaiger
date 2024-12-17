@@ -59,8 +59,9 @@ export const Intro = () => {
 	);
 
 	return(
-		<section>
-			<motion.div className={styles.section} style={{ transform: contentTransform, opacity: contentOpacity }}>
+		<section className={styles.section}>
+
+			<motion.div className={styles.sectionContent} style={{ transform: contentTransform, opacity: contentOpacity }}>
 				<h2 className="text-section-heading">
 					Discover Your Perfect Journey
 					<br/>
@@ -85,24 +86,31 @@ export const Intro = () => {
 						src={generationSrc}
 						className={styles.image}
 						alt="man in space suit looking at the earth"
-						layout
 					/>
 				</motion.div>
-				<motion.div style={{ transform: linkTransform, opacity: linkOpacity }}>
-					<motion.p
-						animate={{ transform: ['scale(0.8)','scale(1)']}}
-						transition={{
-							duration: 2,
-							repeat: Infinity,
-							ease: "easeInOut",
-							repeatType: "reverse",
-						}}
-					>
-						<Link href="/generation-lab" className="highlightButton">
-							Start Now!
-						</Link>
-					</motion.p>
-				</motion.div>
+			</motion.div>
+
+			<motion.div
+				className={styles.ctaContent} 
+				style={{ 
+					transform: linkTransform,
+					opacity: linkOpacity
+				}}
+			>
+				<motion.p
+					animate={{ transform: ['scale(0.8)','scale(1)']}}
+					transition={{
+						duration: 2,
+						repeat: Infinity,
+						ease: "easeInOut",
+						repeatType: "reverse",
+					}}
+					style={{ textAlign: 'center'}}
+				>
+					<Link href="/generation-lab" className="highlightButton">
+						Start Now!
+					</Link>
+				</motion.p>
 			</motion.div>
 
 		</section>
