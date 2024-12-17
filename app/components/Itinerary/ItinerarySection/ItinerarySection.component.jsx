@@ -35,7 +35,7 @@ export const ItinerarySection = () => {
 	}, [dispatch]);
 
 	if (!itinerary) return (
-		<section className={styles.itinerary}>
+		<section className={`${styles.itinerary} container`}>
 			<h2>No itinerary yet.</h2>
 			<Link href="/generation-lab" className="primaryButton">
 				Generation Lab &#128161;

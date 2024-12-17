@@ -1,7 +1,9 @@
 'use client';
-
+// React
+import { useEffect, useState } from "react";
 // Next
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
 // Assets
 import GithubSVG from "assets/icons/github.svg";
 // Style
@@ -11,7 +13,11 @@ import { motion, useScroll, useTransform } from 'motion/react';
 
 export const Header = () => {
 
+	const [isItineraryPage, setIsItineraryPage] = useState(false);
+
 	const { scrollYProgress } = useScroll();
+
+	const pathname = usePathname();
 
 	const backgroundColorOpacity = useTransform(
 		scrollYProgress,
@@ -19,13 +25,22 @@ export const Header = () => {
 		[0.1, 0.7]
 	);
 
-	return(
-		<header className={styles.fixedHeader}>
+	useEffect(() => {
+		if (pathname === "/itinerary") {
+			setIsItineraryPage(true);
+		} else {
+			setIsItineraryPage(false);
+		}
+	}, [pathname])
 
-			<motion.div
+
+	return(
+		<header className={isItineraryPage ? styles.fixedHeaderFilled : styles.fixedHeader}>
+
+			{ !isItineraryPage && <motion.div
 				className={styles.backgroundLayer}
 				style={{ opacity: backgroundColorOpacity}}
-			/>
+			/>}
 
 			<Link href="/">
 				<h2>VoyAIger</h2>
