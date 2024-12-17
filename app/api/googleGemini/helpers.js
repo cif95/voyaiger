@@ -56,6 +56,11 @@ export const itinerarySchema = {
 						},
 						nullable: false,
 					},
+					timeZone: {
+						type: SchemaType.STRING,
+						description: "The IANA time zone identifier for the city, e.g., 'Australia/Sydney'",
+						nullable: false,
+					},
 					duration: {
 						type: SchemaType.STRING,
 						description: "Duration in days of the stay at each stop",
