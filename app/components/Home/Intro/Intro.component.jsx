@@ -88,12 +88,20 @@ export const Intro = () => {
 						layout
 					/>
 				</motion.div>
-				<motion.div
-					style={{ transform: linkTransform, opacity: linkOpacity }}
-				>
-					<Link href="/generation-lab" className="highlightButton">
-						Start Now!
-					</Link>
+				<motion.div style={{ transform: linkTransform, opacity: linkOpacity }}>
+					<motion.p
+						animate={{ transform: ['scale(0.8)','scale(1)']}}
+						transition={{
+							duration: 2,
+							repeat: Infinity,
+							ease: "easeInOut",
+							repeatType: "reverse",
+						}}
+					>
+						<Link href="/generation-lab" className="highlightButton">
+							Start Now!
+						</Link>
+					</motion.p>
 				</motion.div>
 			</motion.div>
 
