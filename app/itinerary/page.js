@@ -10,11 +10,9 @@ export default function ItineraryPage() {
 
 	return (
 		<main>
-			<div className="container">
-				<Provider store={store}>
-					<ItinerarySection />
-				</Provider>
-			</div>
+			<Provider store={store}>
+				<ItinerarySection />
+			</Provider>
 		</main> 
 	);
 }

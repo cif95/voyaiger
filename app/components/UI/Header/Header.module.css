@@ -17,6 +17,14 @@
 	color: white;
 }
 
+.fixedHeaderFilled {
+	composes: fixedHeader;
+	background: rgb(46,89,184);
+	background: -moz-linear-gradient(90deg, rgba(46, 89, 184, 0.75) 0%, rgba(99, 120, 181, 0.56) 35%, rgba(177, 118, 212, 0.57) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(46, 89, 184, 0.75) 0%, rgba(99, 120, 181, 0.56) 35%, rgba(177, 118, 212, 0.57) 100%);
+	background: linear-gradient(90deg, rgba(46, 89, 184, 0.75) 0%, rgba(99, 120, 181, 0.56) 35%, rgba(177, 118, 212, 0.57) 100%);
+}
+
 .githubSvg {
 
 	fill: white;

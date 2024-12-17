@@ -12,8 +12,8 @@ export const WeatherWidget = ({ weather }) => {
 				className={styles.weatherIcon}
 				src={weather?.iconUrl}
 				alt={weather?.description}
-				width={80}
-				height={80}
+				width={60}
+				height={60}
 			/>
 			<div className="row gap-xs justify-center">
 				<span>{weather?.temperature?.current}°</span>

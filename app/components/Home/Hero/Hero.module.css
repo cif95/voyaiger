@@ -19,6 +19,7 @@
 }
 
 .hero {
+
 	height: 100%;
 	width: 100%;
 
@@ -89,7 +90,7 @@
 	z-index: 3;
 
 	position: absolute;
-	bottom: 30px;
+	bottom: 60px;
 	left: 50%;
 
 	transform: translateX(-50%);
@@ -120,5 +121,9 @@
 		border: 2px solid #fff;
 		border-radius: 50% 50% 50% 50% / 25% 25% 25% 25%;
 		animation: kick 1s ease-in infinite alternate;
+	}
+
+	@media screen and (min-width: 640px) {
+		bottom: 30px;
 	}
 }
