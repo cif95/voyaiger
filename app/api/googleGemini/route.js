@@ -15,7 +15,7 @@ export async function POST(req) {
 		}
 
 		const model = genAI.getGenerativeModel({
-			model: "models/gemini-1.5-pro",
+			model: "gemini-1.5-flash-8b",
 			systemInstruction: `
 				Generate a travel itinerary considering this user filters:
 					{ 
