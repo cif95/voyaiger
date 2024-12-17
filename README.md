@@ -1,7 +1,8 @@
 # voyAIger
 
 
-voyAIger is a web app that displays a travel itinerary based on filters set by the user.
+voyAIger is a travel itinerary generator, AI-powered.
+User can select multiple filters to get a tailored result.
 
 ## Live Demo
 
@@ -14,7 +15,7 @@ https://voyaigervc.netlify.app/
  - **Libraries**: 
    - React.js v.19
    - Motion
-   - Leaflet
+   - Pigeon Maps
    - Axios
  - **State Management**:
    - Redux
@@ -22,8 +23,9 @@ https://voyaigervc.netlify.app/
 
 
 ### Apis:
-  - Gemini AI: used for generate travel itinerary
-  - Unsplash: used to fetch photos
+  - Gemini AI: to generate travel itinerary
+  - Unsplash: to fetch travel stops photos
+  - Open Weather: to fetch travel stops weather info
 
 
 ### How to run
