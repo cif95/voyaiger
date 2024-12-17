@@ -100,12 +100,6 @@ export const Intro = () => {
 			<motion.p
 				style={{ transform: paragraphTransform, opacity: paragraphOpacity }}
 			>
-				Whether you&apos;re into scenic escapes, vibrant city life, or off-the-beaten-path adventures, just set your preferences, and let the magic happen!
-			</motion.p>
-
-			<motion.p
-				style={{ transform: paragraphTransform, opacity: paragraphOpacity }}
-			>
 				Why settle for average when your adventure can be extraordinary?<br/>
 				👉 Start planning today and turn your dream vacation into reality!
 			</motion.p>
@@ -123,7 +117,6 @@ export const Intro = () => {
 			</motion.div>
 
 			<motion.div
-				className={styles.link}
 				style={{ transform: linkTransform, opacity: linkOpacity }}
 			>
 				<Link href="/generation-lab" className="highlightButton">
