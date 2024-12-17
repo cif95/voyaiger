@@ -1,23 +1,20 @@
 import Image from "next/image";
 import styles from "./ItineraryStop.module.css";
 import { WeatherWidget } from "./WeatherWidget/WeatherWidget.component";
+import { CurrentTime } from "./CurrentTime/CurrentTime.component";
 
-export const ItineraryStop = ({ stop }) => {
+export const ItineraryStop = ({ stop, number }) => {
 
 	const { weather, image } = stop;
 
 	return(
 		<li key={stop.city} className={styles.container}>
 
-			<div className="row gap-m space-between">
-				<div className="column gap-s" style={{maxWidth: '70%'}}>
-					<div className="row gap-xs">
-						<h4>{stop?.city}</h4>
-						<span>{stop?.duration}</span>
-					</div>
-					<span>{stop?.description}</span>
+			<div className="column gap-s">
+				<div className="row gap-xs">
+					<h3>{number}.{stop?.city} <i>for</i> {stop?.duration}</h3>
 				</div>
-				<WeatherWidget weather={weather}/>
+				<span>{stop?.description}</span>
 			</div>
 
 			<figure className={styles.imageWrapper}>
@@ -30,12 +27,17 @@ export const ItineraryStop = ({ stop }) => {
 				/>
 				<figcaption className={`${styles.image} text-label`}>Image provided by <a href={image?.user?.portfolio_url} target="_blank" rel="noopener noreferrer">@{image?.user?.username}</a> </figcaption>
 			</figure>
-			
-			<h4>Attractions:</h4>
-			<ol>
+
+			<div className="row gap-l">
+				<WeatherWidget weather={weather}/>
+				<CurrentTime stopTimezone={stop?.timeZone} stopName={stop?.city} />
+			</div>
+
+			<h3>Attractions:</h3>
+			<ol className={styles.attractionsList}>
 				{stop.attractions.map( attraction => (
 					<li key={attraction?.name}>
-						<span> &#x2022; {attraction?.name}: {attraction?.description}</span>
+						&#x2022; <b>{attraction?.name}</b>: {attraction?.description}
 					</li>
 				) )}
 			</ol>

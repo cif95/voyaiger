@@ -1,18 +1,18 @@
 export const animationConfigs = {
 	content: {
 		opacity: {
-			inputs: [0.15, 0.25],
-			outputs: [0, 1]
+			inputs: [0.15, 0.25, 0.7],
+			outputs: [0, 1, 0]
 		},
 		transform: {
-			inputs: [0.15, 0.25],
-			outputs: ["translateY(-50%)", "translateY(0%)"]
+			inputs: [0.15, 0.25, 0.7],
+			outputs: ["translateY(70%)", "translateY(10%)", "translateY(-70%)"]
 		}
 	},
 	image: {
 		opacity: {
-			inputs: [0.15, 0.3, 0.5],
-			outputs: [0, 1, 0.5]
+			inputs: [0.15, 0.3],
+			outputs: [0, 1]
 		},
 		transform: {
 			inputs: [0.15, 0.3],
@@ -21,12 +21,12 @@ export const animationConfigs = {
 	},
 	link: {
 		opacity: {
-			inputs: [0.15, 0.35],
+			inputs: [0.5, 0.7],
 			outputs: [0, 1]
 		},
 		transform: {
-			inputs: [0.15, 0.35],
-			outputs: ["translateY(0vh)", "translateY(-30vh)"]
+			inputs: [0.5, 0.7],
+			outputs: ["translateY(0vh)", "translateY(0vh)"]
 		}
 	}
 }

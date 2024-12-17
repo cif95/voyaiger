@@ -56,7 +56,9 @@ export const ItinerarySection = () => {
 			<h3 className={styles.title}>Stops: </h3>
 			
 			<ul className={`${styles.list} column gap-l`}>
-				{itinerary && itinerary?.stops.map( stop => (<ItineraryStop stop={stop} key={stop?.city}/>))}
+				{itinerary && itinerary?.stops.map( (stop, index) => (
+					<ItineraryStop stop={stop} number={index+1} key={stop?.city}/>
+				))}
 			</ul>
 
 			<TravelMap />

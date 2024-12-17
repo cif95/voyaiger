@@ -20,7 +20,7 @@ export default function Home() {
 
 	const opacity = useTransform(
 		scrollYProgress,
-		[0, 0.2],
+		[0, 0.15],
 		[0, 1]
 	);
 

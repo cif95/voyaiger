@@ -21,7 +21,7 @@ export const Header = () => {
 
 	const backgroundColorOpacity = useTransform(
 		scrollYProgress,
-		[0, 0.5],
+		[0, 0.2],
 		[0.1, 0.7]
 	);
 
