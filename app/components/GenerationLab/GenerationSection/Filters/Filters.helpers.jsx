@@ -90,7 +90,7 @@ const TYPE_FILTERS = [
 		icon: <MountainsSVG />
 	},
 	{
-		label: "Art & Culture",
+		label: "Culture",
 		value: "artAndCulture",
 		icon: <CultureSVG />,
 	},
