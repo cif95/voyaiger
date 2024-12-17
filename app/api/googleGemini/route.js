@@ -48,6 +48,11 @@ export async function POST(req) {
 			}	
 		);
 	} catch (error) {
-		return new Response(JSON.stringify({ error: error.message }), { status: error.statusCode });
+		throw new Error(error);
 	}
 }
+
+// This enables the function to run in the background for up to 15 minutes
+export const config = {
+	type: "experimental-background"
+};
