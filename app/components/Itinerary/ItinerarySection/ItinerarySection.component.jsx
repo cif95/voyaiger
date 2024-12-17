@@ -44,7 +44,7 @@ export const ItinerarySection = () => {
 	);
 
 	return(
-		<section className={styles.itinerary}>
+		<section className={`${styles.itinerary} container`}>
 
 			<h2>Your itinerary</h2>
 			<h3 className={styles.title}>{itinerary?.itineraryName}</h3>
